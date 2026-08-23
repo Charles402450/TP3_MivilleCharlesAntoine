@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* Palette
+Crème #F2EDE4
+Orange #C2471A
+Jaune #E8C97E
+Marron #8B7355
+Vert #4CA28A
+Noir #131211
+*/
+
+/* Typographies 
+@font-face {
+  font-family: "Fugaz One";
+  src: url("../fonts/FugazOne.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Italic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+*/
