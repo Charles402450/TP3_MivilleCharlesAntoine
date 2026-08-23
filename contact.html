@@ -28,6 +28,241 @@
       <section id="" class="grid grid-cols-12 mx-auto max-w-[1280px]">
         <div class=""></div>
       </section>
+      <section>
+        <form
+          id="formInscription"
+          action="confirmation.html"
+          method="post"
+          novalidate
+        >
+          <fieldset>
+            <legend>Informations personnelles</legend>
+            <div class="form">
+              <div class="inputControl form--width">
+                <label for="prenom">Prénom<span>*</span></label>
+                <input type="text" id="prenom" />
+                <div class="errorMessage"></div>
+              </div>
+              <div class="inputControl form--width">
+                <label for="nom">Nom de famille<span>*</span></label>
+                <input type="text" id="nom" />
+                <div class="errorMessage"></div>
+              </div>
+              <div class="inputControl form--width">
+                <label for="courriel">Adresse courriel<span>*</span></label>
+                <input type="email" id="courriel" />
+                <div class="errorMessage"></div>
+              </div>
+              <div class="inputControl form--width">
+                <label for="telephone">Numéro de téléphone</label>
+                <input type="tel" id="telephone" placeholder="555 555-5555" />
+              </div>
+              <div class="inputControl form--width">
+                <label for="naissance">Date de naissance<span>*</span></label>
+                <input type="date" id="naissance" />
+                <div class="errorMessage"></div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Informations de l'entreprise</legend>
+            <div class="form">
+              <div class="inputControl form--width">
+                <label for="entreprise"
+                  >Nom de l'entreprise/organisation<span>*</span></label
+                >
+                <input type="text" id="entreprise" />
+                <div class="errorMessage"></div>
+              </div>
+              <div class="inputControl form--width">
+                <label for="secteur-activite"
+                  >Secteur d'activité<span>*</span></label
+                >
+                <select id="secteur-activite">
+                  <option value="">Sélectionnez un secteur d'activité</option>
+                  <option value="technologie">Technologie</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="finance">Finance</option>
+                  <option value="sante">Santé</option>
+                  <option value="education">Éducation</option>
+                  <option value="autre">Autre</option>
+                </select>
+                <div class="errorMessage"></div>
+              </div>
+              <div class="inputControl form--width">
+                <fieldset
+                  class="form__fieldsetInsideFieldset--margin"
+                  name="taille-equipe"
+                  id="taille-equipe"
+                >
+                  <legend>Taille de l'équipe</legend>
+                  <div class="form__champRadio--flex">
+                    <input
+                      type="radio"
+                      name="taille-equipe"
+                      id="equipe-1"
+                      value="1"
+                    />
+                    <label class="form__champRadio--margin" for="equipe-1"
+                      >1 personne</label
+                    >
+                  </div>
+                  <div class="form__champRadio--flex">
+                    <input
+                      type="radio"
+                      name="taille-equipe"
+                      id="equipe-2-10"
+                      value="2-10"
+                    />
+                    <label class="form__champRadio--margin" for="equipe-2-10"
+                      >2-10 personnes</label
+                    >
+                  </div>
+                  <div class="form__champRadio--flex">
+                    <input
+                      type="radio"
+                      name="taille-equipe"
+                      id="equipe-11-50"
+                      value="11-50"
+                    />
+                    <label class="form__champRadio--margin" for="equipe-11-50"
+                      >11-50 personnes</label
+                    >
+                  </div>
+                  <div class="form__champRadio--flex">
+                    <input
+                      type="radio"
+                      name="taille-equipe"
+                      id="equipe-51-ou-plus"
+                      value="51-ou-plus"
+                    />
+                    <label
+                      class="form__champRadio--margin"
+                      for="equipe-51-ou-plus"
+                      >51 personnes ou plus</label
+                    >
+                  </div>
+                  <div class="errorMessage"></div>
+                </fieldset>
+              </div>
+              <div class="inputControl form--width">
+                <label for="site-web">Site web de l'entreprise</label>
+                <input
+                  type="url"
+                  id="site-web"
+                  placeholder="https://www.votresite.com"
+                />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Paramètres du compte</legend>
+            <div class="form">
+              <div class="inputControl form--width">
+                <fieldset
+                  class="form__fieldsetInsideFieldset--margin"
+                  name="plan-choisi"
+                  id="plan-choisi"
+                >
+                  <legend>Plan choisi</legend>
+                  <div class="form__champRadio--flex">
+                    <input
+                      type="radio"
+                      name="plan-choisi"
+                      id="plan-gratuit"
+                      value="plan-gratuit"
+                    />
+                    <label class="form__champRadio--margin" for="plan-gratuit"
+                      >Gratuit</label
+                    >
+                  </div>
+                  <div class="form__champRadio--flex">
+                    <input
+                      type="radio"
+                      name="plan-choisi"
+                      id="plan-pro"
+                      value="plan-pro"
+                    />
+                    <label class="form__champRadio--margin" for="plan-pro"
+                      >Pro (9,99$/mois)</label
+                    >
+                  </div>
+                  <div class="form__champRadio--flex">
+                    <input
+                      type="radio"
+                      name="plan-choisi"
+                      id="plan-entreprise"
+                      value="plan-entreprise"
+                    />
+                    <label
+                      class="form__champRadio--margin"
+                      for="plan-entreprise"
+                      >Entreprise (29,99$/mois)</label
+                    >
+                  </div>
+                  <div class="errorMessage"></div>
+                </fieldset>
+              </div>
+              <div class="inputControl form--width">
+                <label for="username"
+                  >Nom d'utilisateur<span>*<br /></span>
+                  <p class="form__inputSpecification--apparence">
+                    Entre 3 et 20 caractères
+                  </p></label
+                >
+                <input type="text" id="username" />
+                <div class="errorMessage"></div>
+              </div>
+              <div class="inputControl form--width">
+                <label for="password"
+                  >Mot de passe<span>*</span><br />
+                  <p class="form__inputSpecification--apparence">
+                    Min. 8 caractères, 1 majuscule, 1 chiffre, 1 caractère
+                    spécial
+                  </p></label
+                >
+                <input type="password" id="password" />
+                <div class="errorMessage"></div>
+              </div>
+              <div class="inputControl form--width">
+                <label for="password-confirmation"
+                  >Confirmer le mot de passe<span>*</span><br />
+                  <p class="form__inputSpecification--apparence">
+                    Min. 8 caractères, 1 majuscule, 1 chiffre, 1 caractère
+                    spécial
+                  </p></label
+                >
+                <input type="password" id="password-confirmation" />
+                <div class="errorMessage"></div>
+              </div>
+
+              <div class="inputControl form--width form__checkbox--flex">
+                <input type="checkbox" id="conditions-utilisation" />
+                <label
+                  class="form__checkboxLabel--margin"
+                  for="conditions-utilisation"
+                >
+                  J'accepte les conditions d'utilisation<span>*</span><br /><a
+                    href="https://www.google.com/"
+                    >Lire les conditions d'utilisation</a
+                  >
+                </label>
+                <div class="errorMessage"></div>
+              </div>
+              <div class="inputControl form--width form__checkbox--flex">
+                <input type="checkbox" id="nouveautes-offres-courriel" />
+                <label
+                  class="form__checkboxLabel--margin"
+                  for="nouveautes-offres-courriel"
+                >
+                  Je souhaite recevoir les nouveautés et offres par courriel
+                </label>
+              </div>
+              <button type="submit">Me créer un compte</button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
     </main>
 
     <footer class="">
