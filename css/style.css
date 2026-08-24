@@ -9,7 +9,7 @@ Vert #4CA28A
 Noir #131211
 */
 
-/* Typographies 
+/* Typographies */
 @font-face {
   font-family: "Fugaz One";
   src: url("../fonts/FugazOne.ttf") format("truetype");
@@ -30,4 +30,3 @@ Noir #131211
   font-weight: 100 900;
   font-style: italic;
 }
-*/
