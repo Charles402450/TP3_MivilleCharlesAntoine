@@ -5,14 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Studio Chatoyant</title>
+    <title>Contact — Studio Chatoyant</title>
     <meta
       name="description"
-      content="Studio Chatoyant - Studio de jeux vidéo québécois."
+      content="Contactez Studio Chatoyant et inscrivez-vous à l'infolettre pour suivre le développement de Moogical Sanctuary."
     />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="favicon.png" />
+    <script src="js/formulaire.js" defer></script>
     <style type="text/tailwindcss">
       @theme {
         /* Typographies */
@@ -24,125 +25,266 @@
 
   <body>
     <header></header>
+
     <main>
       <section id="" class="grid grid-cols-12 mx-auto max-w-7xl">
         <div class=""></div>
       </section>
-      <section id="formInfolettre">
+
+      <section id="sectionInfolettre">
         <form
+          class="formulaire"
           id="formInfolettre"
           action="confirmation.html"
-          method="post"
+          method="get"
           novalidate
         >
-          <fieldset>
-            <legend>Informations personnelles</legend>
-            <div class="form">
-              <div class="inputControl form--width">
-                <label for="prenom">Prénom<span>*</span></label>
-                <input type="text" id="prenom" />
-                <div class="errorMessage"></div>
-              </div>
-              <div class="inputControl form--width">
-                <label for="nom">Nom de famille<span>*</span></label>
-                <input type="text" id="nom" />
-                <div class="errorMessage"></div>
-              </div>
-              <div class="inputControl form--width">
-                <label for="courriel">Adresse courriel<span>*</span></label>
-                <input type="email" id="courriel" />
-                <div class="errorMessage"></div>
-              </div>
-              <div class="inputControl form--width">
-                <label for="naissance">Date de naissance<span>*</span></label>
-                <input type="date" id="naissance" />
-                <div class="errorMessage"></div>
-              </div>
-              </fieldset>
-              <fieldset>
-            <legend>Autres informations</legend>
-              <div class="inputControl form--width">
-                <label for="premier-contact"
-                  >Où avez-vous entendu parler de nous?<span>*</span></label
-                >
-                <select id="premier-contact">
-                  <option value="">Sélectionnez une option</option>
-                  <option value="recommandation">
-                    Recommandation d'un ami
-                  </option>
-                  <option value="publicite">Publicité</option>
-                  <option value="medias-sociaux">Médias sociaux</option>
-                  <option value="autre">Autre</option>
-                </select>
-                <div class="errorMessage"></div>
-              </div>
-              <div class="inputControl form--width">
-                <label for="langue-infolettre"
-                  >Langue de l'infolettre<span>*</span></label
-                >
-                <select id="langue-infolettre">
-                  <option value="">Sélectionnez une option</option>
-                  <option value="FR">Français</option>
-                  <option value="EN">Anglais</option>
-                </select>
-                <div class="errorMessage"></div>
-              </div></fieldset>
-              <fieldset name="contenu-preference" id="contenu-preference">
-                <legend>J'accepte de recevoir des communications...</legend>
-                <div class="form__champRadio--flex">
-                  <input
-                    type="radio"
-                    name="contenu-preference"
-                    id="moogical-sanctuary"
-                    value="Moogical Sanctuary"
-                  />
-                  <label
-                    class="form__champRadio--margin"
-                    for="moogical-sanctuary"
-                    >Sur le jeu « Moogical Sanctuary »</label
-                  >
-                </div>
-                <div class="form__champRadio--flex">
-                  <input
-                    type="radio"
-                    name="contenu-preference"
-                    id="moogical-sanctuary"
-                    value="Moogical Sanctuary"
-                  />
-                  <label
-                    class="form__champRadio--margin"
-                    for="moogical-sanctuary"
-                    >Sur tous les jeux à venir</label
-                  >
-                </div>
-                <div class="errorMessage"></div>
-              </fieldset>
+          <p class="formulaire__note">
+            Les champs marqués d'un astérisque (*) sont obligatoires.
+          </p>
 
-              <div class="inputControl form--width form__checkbox--flex">
-                <input type="checkbox" id="conditions-utilisation" />
-                <label
-                  class="form__checkboxLabel--margin"
-                  for="conditions-utilisation"
+          <fieldset class="formulaire__groupe">
+            <legend class="formulaire__legende">
+              Informations personnelles
+            </legend>
+
+            <div class="formulaire__champ">
+              <label class="formulaire__etiquette" for="prenom">
+                Prénom<span class="formulaire__requis" aria-hidden="true"
+                  >*</span
                 >
-                  J'accepte les conditions d'utilisation<span>*</span><br /><a
-                    href="https://www.google.com/"
-                    >Lire les conditions d'utilisation</a
-                  >
-                </label>
-                <div class="errorMessage"></div>
-              </div>
-              <div class="inputControl form--width form__checkbox--flex">
-                <input type="checkbox" id="nouveautes-offres-courriel" />
-                <label
-                  class="form__checkboxLabel--margin"
-                  for="nouveautes-offres-courriel"
+              </label>
+              <input
+                class="formulaire__saisie"
+                type="text"
+                id="prenom"
+                name="prenom"
+                autocomplete="given-name"
+                aria-describedby="erreurPrenom"
+                required
+              />
+              <p class="formulaire__erreur" id="erreurPrenom" role="alert"></p>
+            </div>
+
+            <div class="formulaire__champ">
+              <label class="formulaire__etiquette" for="nom">
+                Nom de famille<span
+                  class="formulaire__requis"
+                  aria-hidden="true"
+                  >*</span
                 >
-                  Je souhaite recevoir les nouveautés et offres par courriel
-                </label>
-              </div>
-              <button type="submit">M'inscrire à l'infolettre</button>
+              </label>
+              <input
+                class="formulaire__saisie"
+                type="text"
+                id="nom"
+                name="nom"
+                autocomplete="family-name"
+                aria-describedby="erreurNom"
+                required
+              />
+              <p class="formulaire__erreur" id="erreurNom" role="alert"></p>
+            </div>
+
+            <div class="formulaire__champ">
+              <label class="formulaire__etiquette" for="courriel">
+                Adresse courriel<span
+                  class="formulaire__requis"
+                  aria-hidden="true"
+                  >*</span
+                >
+              </label>
+              <input
+                class="formulaire__saisie"
+                type="email"
+                id="courriel"
+                name="courriel"
+                autocomplete="email"
+                aria-describedby="erreurCourriel"
+                required
+              />
+              <p
+                class="formulaire__erreur"
+                id="erreurCourriel"
+                role="alert"
+              ></p>
+            </div>
+
+            <div class="formulaire__champ">
+              <label class="formulaire__etiquette" for="naissance">
+                Date de naissance<span
+                  class="formulaire__requis"
+                  aria-hidden="true"
+                  >*</span
+                >
+              </label>
+              <input
+                class="formulaire__saisie"
+                type="date"
+                id="naissance"
+                name="naissance"
+                autocomplete="bday"
+                aria-describedby="erreurNaissance"
+                required
+              />
+              <p
+                class="formulaire__erreur"
+                id="erreurNaissance"
+                role="alert"
+              ></p>
             </div>
           </fieldset>
+
+          <fieldset class="formulaire__groupe">
+            <legend class="formulaire__legende">Autres informations</legend>
+
+            <div class="formulaire__champ">
+              <label class="formulaire__etiquette" for="premierContact">
+                Où avez-vous entendu parler de nous?<span
+                  class="formulaire__requis"
+                  aria-hidden="true"
+                  >*</span
+                >
+              </label>
+              <select
+                class="formulaire__saisie"
+                id="premierContact"
+                name="premierContact"
+                aria-describedby="erreurPremierContact"
+                required
+              >
+                <option value="">Sélectionnez une option</option>
+                <option value="recommandation">Recommandation d'un ami</option>
+                <option value="publicite">Publicité</option>
+                <option value="medias-sociaux">Médias sociaux</option>
+                <option value="autre">Autre</option>
+              </select>
+              <p
+                class="formulaire__erreur"
+                id="erreurPremierContact"
+                role="alert"
+              ></p>
+            </div>
+
+            <div class="formulaire__champ">
+              <label class="formulaire__etiquette" for="langueInfolettre">
+                Langue de l'infolettre<span
+                  class="formulaire__requis"
+                  aria-hidden="true"
+                  >*</span
+                >
+              </label>
+              <select
+                class="formulaire__saisie"
+                id="langueInfolettre"
+                name="langueInfolettre"
+                aria-describedby="erreurLangueInfolettre"
+                required
+              >
+                <option value="">Sélectionnez une option</option>
+                <option value="FR">Français</option>
+                <option value="EN">Anglais</option>
+              </select>
+              <p
+                class="formulaire__erreur"
+                id="erreurLangueInfolettre"
+                role="alert"
+              ></p>
+            </div>
+          </fieldset>
+
+          <fieldset class="formulaire__groupe formulaire__champ">
+            <legend class="formulaire__legende">
+              J'accepte de recevoir des communications...<span
+                class="formulaire__requis"
+                aria-hidden="true"
+                >*</span
+              >
+            </legend>
+
+            <div class="formulaire__option">
+              <input
+                class="formulaire__saisie formulaire__saisie--radio"
+                type="radio"
+                name="contenuPreference"
+                id="moogicalSanctuary"
+                value="Moogical Sanctuary"
+                aria-describedby="erreurContenuPreference"
+              />
+              <label class="formulaire__etiquette" for="moogicalSanctuary">
+                Sur le jeu « Moogical Sanctuary »
+              </label>
+            </div>
+
+            <div class="formulaire__option">
+              <input
+                class="formulaire__saisie formulaire__saisie--radio"
+                type="radio"
+                name="contenuPreference"
+                id="tousJeuxAVenir"
+                value="Tous les jeux à venir"
+                aria-describedby="erreurContenuPreference"
+              />
+              <label class="formulaire__etiquette" for="tousJeuxAVenir">
+                Sur tous les jeux à venir
+              </label>
+            </div>
+
+            <p
+              class="formulaire__erreur"
+              id="erreurContenuPreference"
+              role="alert"
+            ></p>
+          </fieldset>
+
+          <div class="formulaire__champ formulaire__champ--case">
+            <div class="formulaire__option">
+              <input
+                class="formulaire__saisie formulaire__saisie--case"
+                type="checkbox"
+                id="conditionsUtilisation"
+                name="conditionsUtilisation"
+                aria-describedby="erreurConditionsUtilisation"
+                required
+              />
+              <label class="formulaire__etiquette" for="conditionsUtilisation">
+                J'accepte les conditions d'utilisation<span
+                  class="formulaire__requis"
+                  aria-hidden="true"
+                  >*</span
+                >
+              </label>
+            </div>
+            <a class="formulaire__lien" href="conditions.html">
+              Lire les conditions d'utilisation
+            </a>
+            <p
+              class="formulaire__erreur"
+              id="erreurConditionsUtilisation"
+              role="alert"
+            ></p>
+          </div>
+
+          <div class="formulaire__champ formulaire__champ--case">
+            <div class="formulaire__option">
+              <input
+                class="formulaire__saisie formulaire__saisie--case"
+                type="checkbox"
+                id="nouveautesOffresCourriel"
+                name="nouveautesOffresCourriel"
+              />
+              <label
+                class="formulaire__etiquette"
+                for="nouveautesOffresCourriel"
+              >
+                Je souhaite recevoir les nouveautés et offres par courriel
+              </label>
+            </div>
+          </div>
+
+          <button class="formulaire__bouton" type="submit">
+            M'inscrire à l'infolettre
+          </button>
         </form>
       </section>
     </main>

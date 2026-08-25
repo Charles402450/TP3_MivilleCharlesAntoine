@@ -1,44 +1,67 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /* Formulaire */
+  /* Formulaire d'infolettre */
 
-  const form = document.getElementById("formInscription");
+  const form = document.getElementById("formInfolettre");
   const prenom = document.getElementById("prenom");
   const nom = document.getElementById("nom");
   const courriel = document.getElementById("courriel");
   const naissance = document.getElementById("naissance");
-  const entreprise = document.getElementById("entreprise");
-  const secteurActivite = document.getElementById("secteur-activite");
-  const tailleEquipe1 = document.getElementById("equipe-1");
-  const tailleEquipe2 = document.getElementById("equipe-2-10");
-  const tailleEquipe3 = document.getElementById("equipe-11-50");
-  const tailleEquipe4 = document.getElementById("equipe-51-ou-plus");
-  const tailleEquipe = document.getElementById("taille-equipe");
-  const siteWeb = document.getElementById("site-web");
-  const username = document.getElementById("username");
-  const password = document.getElementById("password");
-  const passwordConfirmation = document.getElementById("password-confirmation");
-  const planChoisi = document.getElementById("plan-choisi");
-  const planGratuit = document.getElementById("plan-gratuit");
-  const planPro = document.getElementById("plan-pro");
-  const planEntreprise = document.getElementById("plan-entreprise");
+  const premierContact = document.getElementById("premierContact");
+  const langueInfolettre = document.getElementById("langueInfolettre");
+  const radiosContenu = document.querySelectorAll(
+    'input[name="contenuPreference"]',
+  );
   const conditionsUtilisation = document.getElementById(
-    "conditions-utilisation",
+    "conditionsUtilisation",
   );
 
-  // empêche le formulaire de se soumettre directement sans passer par notre validation
-  // Si validateForm() retourne true (noError = true), le formulaire se soumet
-  // Sinon, on communique pourquoi à l'utilisateur
+  const PAGE_CONFIRMATION = "confirmation.html";
+  const AGE_MINIMUM = 18;
+
+  // Regex ancrée (^ ... $) : sans les ancres, test() accepterait
+  // n'importe quelle chaîne contenant un courriel valide quelque part.
+  const RE_COURRIEL =
+    /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/;
+
+  // Devient true après la première tentative de soumission.
+  // Sert à ne pas afficher d'erreurs avant que l'utilisateur ait essayé.
+  let dejaSoumis = false;
+
+  /* --------------------------------------------------------------
+     Soumission
+     -------------------------------------------------------------- */
+
+  // On bloque systématiquement la soumission native, puis on redirige
+  // nous-mêmes vers la page de confirmation si tout est valide.
   form.addEventListener("submit", (event) => {
-    if (!validateForm()) {
-      event.preventDefault();
+    event.preventDefault();
+    dejaSoumis = true;
+
+    if (validateForm()) {
+      window.location.href = PAGE_CONFIRMATION;
+    } else {
+      focusPremierChampFautif();
     }
   });
 
-  // fonction de validation du formulaire
+  // Revalidation en direct, mais seulement après une première tentative :
+  // l'utilisateur voit ses erreurs disparaître au fur et à mesure qu'il corrige.
+  form.addEventListener("input", () => {
+    if (dejaSoumis) validateForm();
+  });
+
+  form.addEventListener("change", () => {
+    if (dejaSoumis) validateForm();
+  });
+
+  /* --------------------------------------------------------------
+     Validation
+     -------------------------------------------------------------- */
+
   const validateForm = () => {
     let noError = true;
 
-    // validation prenom
+    // Prénom
     const prenomValue = prenom.value.trim();
     if (prenomValue === "") {
       setError(prenom, "Votre prénom est requis.");
@@ -47,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setSuccess(prenom);
     }
 
-    // validation nom de famille
+    // Nom de famille
     const nomValue = nom.value.trim();
     if (nomValue === "") {
       setError(nom, "Votre nom est requis.");
@@ -56,172 +79,59 @@ document.addEventListener("DOMContentLoaded", () => {
       setSuccess(nom);
     }
 
-    // validation courriel
-    const isValidCourriel = (courriel) => {
-      const re =
-        /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
-      return re.test(String(courriel).toLowerCase());
-    };
+    // Adresse courriel
     const courrielValue = courriel.value.trim();
     if (courrielValue === "") {
       setError(courriel, "Le courriel est requis.");
       noError = false;
-    } else if (!isValidCourriel(courrielValue)) {
+    } else if (!RE_COURRIEL.test(courrielValue.toLowerCase())) {
       setError(courriel, "Votre courriel n'est pas valide.");
       noError = false;
     } else {
       setSuccess(courriel);
     }
 
-    // validation date de naissance
+    // Date de naissance
     const naissanceValue = naissance.value;
-    const dateNaissance = new Date(naissanceValue);
-    const dateAujourdhui = new Date();
-    const differenceJour = dateAujourdhui.getDate() - dateNaissance.getDate();
-    const differenceMois = dateAujourdhui.getMonth() - dateNaissance.getMonth();
-    let age = dateAujourdhui.getFullYear() - dateNaissance.getFullYear();
-    if (differenceMois < 0 || (differenceMois === 0 && differenceJour < 0)) {
-      age--;
-    }
-
     if (naissanceValue === "") {
       setError(naissance, "La date de naissance est requise.");
       noError = false;
-    } else if (age < 18) {
-      setError(naissance, "Vous devez avoir 18 ans ou plus.");
+    } else if (calculerAge(naissanceValue) < AGE_MINIMUM) {
+      setError(naissance, `Vous devez avoir ${AGE_MINIMUM} ans ou plus.`);
       noError = false;
     } else {
       setSuccess(naissance);
     }
 
-    // validation nom de l'entreprise
-    const entrepriseValue = entreprise.value.trim();
-    if (entrepriseValue === "") {
-      setError(entreprise, "Votre nom d'entreprise est requis.");
+    // Premier contact
+    if (premierContact.value === "") {
+      setError(premierContact, "Veuillez choisir une option.");
       noError = false;
     } else {
-      setSuccess(entreprise);
+      setSuccess(premierContact);
     }
 
-    // validation secteur d'activité
-    const secteurActiviteValue = secteurActivite.value;
-    if (secteurActiviteValue === "") {
-      setError(secteurActivite, "Votre secteur d'activité est requis.");
-      noError = false;
-    } else {
-      setSuccess(secteurActivite);
-    }
-
-    // validation taille de l'équipe
-    let tailleEquipeChoisi = null;
-    if (tailleEquipe1.checked) {
-      tailleEquipeChoisi = tailleEquipe1.value;
-    } else if (tailleEquipe2.checked) {
-      tailleEquipeChoisi = tailleEquipe2.value;
-    } else if (tailleEquipe3.checked) {
-      tailleEquipeChoisi = tailleEquipe3.value;
-    } else if (tailleEquipe4.checked) {
-      tailleEquipeChoisi = tailleEquipe4.value;
-    }
-
-    if (tailleEquipeChoisi === null) {
-      setError(tailleEquipe, "Veuillez choisir une taille d'équipe.");
-      noError = false;
-    } else {
-      setSuccess(tailleEquipe);
-    }
-
-    // validation site web
-    const siteWebValue = siteWeb.value.trim();
-    if (siteWebValue !== "") {
-      const isValidUrl = (siteWeb) => {
-        const urlRegex =
-          /^(https?:\/\/)((?!-)(?!.*--)[a-zA-Z\-0-9]{1,63}(?<!-)\.)+[a-zA-Z]{2,63}(\/[^\s]*)?$/;
-        return urlRegex.test(String(siteWeb).toLowerCase());
-      };
-
-      if (!isValidUrl(siteWebValue)) {
-        setError(siteWeb, "L'adresse de votre site web n'est pas valide.");
-        noError = false;
-      } else {
-        setSuccess(siteWeb);
-      }
-    }
-
-    // validation nom d'utilisateur
-    const usernameValue = username.value.trim();
-    if (usernameValue === "") {
-      setError(username, "Le nom d'utilisateur est requis.");
-      noError = false;
-    } else if (usernameValue.length < 3 || usernameValue.length > 20) {
+    // Langue de l'infolettre
+    if (langueInfolettre.value === "") {
       setError(
-        username,
-        "Le nom d'utilisateur doit avoir entre 3 et 20 caractères.",
-      );
-      noError = false;
-    } else if (usernameValue.includes(" ")) {
-      setError(username, "Le nom d'utilisateur ne peut pas contenir d'espace.");
-      noError = false;
-    } else {
-      setSuccess(username);
-    }
-
-    // validation mot de passe
-    const isValidPassword = (password) => {
-      const passwordRegex = /^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$/;
-      return passwordRegex.test(String(password));
-    };
-
-    const passwordValue = password.value.trim();
-    if (passwordValue === "") {
-      setError(password, "Le mot de passe est requis.");
-      noError = false;
-    } else if (!isValidPassword(passwordValue)) {
-      setError(
-        password,
-        "Minimum 8 caractères, 1 majuscule, 1 chiffre, 1 caractère spécial.",
+        langueInfolettre,
+        "Veuillez choisir une langue pour l'infolettre.",
       );
       noError = false;
     } else {
-      setSuccess(password);
+      setSuccess(langueInfolettre);
     }
 
-    // validation de la confirmation du mot de passe
-    const passwordConfirmationValue = passwordConfirmation.value.trim();
-    if (passwordConfirmationValue === "") {
-      setError(
-        passwordConfirmation,
-        "La confirmation du mot de passe est requis.",
-      );
-      noError = false;
-    } else if (passwordConfirmationValue !== passwordValue) {
-      setError(
-        passwordConfirmation,
-        "La confirmation du mot de passe n'est pas identique au mot de passe.",
-      );
+    // Contenu de préférence (groupe de boutons radio)
+    const contenuChoisi = [...radiosContenu].some((radio) => radio.checked);
+    if (!contenuChoisi) {
+      setError(radiosContenu[0], "Veuillez choisir une option de contenu.");
       noError = false;
     } else {
-      setSuccess(passwordConfirmation);
+      setSuccess(radiosContenu[0]);
     }
 
-    // validation du plan choisi
-    let planChoisiValue = null;
-    if (planGratuit.checked) {
-      planChoisiValue = planGratuit.value;
-    } else if (planPro.checked) {
-      planChoisiValue = planPro.value;
-    } else if (planEntreprise.checked) {
-      planChoisiValue = planEntreprise.value;
-    }
-
-    if (planChoisiValue === null) {
-      setError(planChoisi, "Veuillez choisir un plan.");
-      noError = false;
-    } else {
-      setSuccess(planChoisi);
-    }
-
-    // validation conditions d'utilisation
+    // Conditions d'utilisation
     if (!conditionsUtilisation.checked) {
       setError(
         conditionsUtilisation,
@@ -235,21 +145,59 @@ document.addEventListener("DOMContentLoaded", () => {
     return noError;
   };
 
+  /* --------------------------------------------------------------
+     Fonctions utilitaires
+     -------------------------------------------------------------- */
+
+  // Calcule l'âge à partir d'une valeur d'input date (format "AAAA-MM-JJ").
+  // On découpe la chaîne au lieu de faire new Date("2000-01-15") :
+  // cette syntaxe est interprétée en UTC par le navigateur, ce qui recule
+  // la date d'une journée dans le fuseau de Montréal.
+  const calculerAge = (valeurISO) => {
+    const [annee, mois, jour] = valeurISO.split("-").map(Number);
+    const dateNaissance = new Date(annee, mois - 1, jour);
+    const dateAujourdhui = new Date();
+
+    let age = dateAujourdhui.getFullYear() - dateNaissance.getFullYear();
+    const differenceMois = dateAujourdhui.getMonth() - dateNaissance.getMonth();
+    const differenceJour = dateAujourdhui.getDate() - dateNaissance.getDate();
+
+    // L'anniversaire n'est pas encore passé cette année
+    if (differenceMois < 0 || (differenceMois === 0 && differenceJour < 0)) {
+      age--;
+    }
+
+    return age;
+  };
+
+  // Place le focus sur le premier champ en erreur pour aider
+  // l'utilisateur (et les lecteurs d'écran) à trouver quoi corriger.
+  const focusPremierChampFautif = () => {
+    const champFautif = form.querySelector(
+      ".formulaire__champ--erreur .formulaire__saisie",
+    );
+    if (champFautif) {
+      champFautif.focus();
+    }
+  };
+
   const setError = (element, message) => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector(".errorMessage");
+    const champ = element.closest(".formulaire__champ");
+    const errorDisplay = champ.querySelector(".formulaire__erreur");
 
     errorDisplay.innerText = message;
-    inputControl.classList.add("error");
-    inputControl.classList.remove("success");
+    champ.classList.add("formulaire__champ--erreur");
+    champ.classList.remove("formulaire__champ--succes");
+    element.setAttribute("aria-invalid", "true");
   };
 
   const setSuccess = (element) => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector(".errorMessage");
+    const champ = element.closest(".formulaire__champ");
+    const errorDisplay = champ.querySelector(".formulaire__erreur");
 
     errorDisplay.innerText = "";
-    inputControl.classList.add("success");
-    inputControl.classList.remove("error");
+    champ.classList.add("formulaire__champ--succes");
+    champ.classList.remove("formulaire__champ--erreur");
+    element.removeAttribute("aria-invalid");
   };
 });

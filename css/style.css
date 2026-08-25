@@ -1,12 +1,7 @@
 @import "tailwindcss";
 
-/* Palette
-Crème #F2EDE4
-Orange #C2471A
-Jaune #E8C97E
-Marron #8B7355
-Vert #4CA28A
-Noir #131211
+/* Palette (pour référence)
+À venir!
 */
 
 /* Typographies */
@@ -29,4 +24,182 @@ Noir #131211
   src: url("../fonts/Inter-Italic.ttf") format("truetype");
   font-weight: 100 900;
   font-style: italic;
+}
+
+/* ==================================================================
+   Formulaire — états de validation
+   Couleurs temporaires : à remplacer par la palette finale.
+   ================================================================== */
+
+:root {
+  --couleur-erreur: #c0392b;
+  --couleur-erreur-fond: #fdecea;
+  --couleur-succes: #2e7d51;
+  --couleur-bordure: #c9c4bd;
+  --couleur-focus: #3b6ea5;
+}
+
+/* ---- Champs de saisie (base) ---- */
+
+.formulaire__saisie {
+  border: 2px solid var(--couleur-bordure);
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  background-color: #fff;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.formulaire__saisie:focus-visible {
+  outline: 3px solid var(--couleur-focus);
+  outline-offset: 2px;
+}
+
+/* Les cases et boutons radio ne prennent pas de bordure :
+   on les colore avec accent-color à la place. */
+.formulaire__saisie--radio,
+.formulaire__saisie--case {
+  border: none;
+  padding: 0;
+  accent-color: var(--couleur-focus);
+  width: 1.125rem;
+  height: 1.125rem;
+  transition: accent-color 0.2s ease;
+}
+
+/* ---- État : erreur ---- */
+
+.formulaire__champ--erreur
+  .formulaire__saisie:not(.formulaire__saisie--radio):not(
+    .formulaire__saisie--case
+  ) {
+  border-color: var(--couleur-erreur);
+  background-color: var(--couleur-erreur-fond);
+}
+
+.formulaire__champ--erreur .formulaire__saisie--radio,
+.formulaire__champ--erreur .formulaire__saisie--case {
+  accent-color: var(--couleur-erreur);
+  outline: 2px solid var(--couleur-erreur);
+  outline-offset: 2px;
+}
+
+/* Le groupe de radios est un fieldset : on encadre le groupe complet. */
+fieldset.formulaire__champ--erreur {
+  border-color: var(--couleur-erreur);
+  background-color: var(--couleur-erreur-fond);
+}
+
+.formulaire__champ--erreur .formulaire__etiquette {
+  color: var(--couleur-erreur);
+}
+
+/* ---- État : succès ---- */
+/* Volontairement discret : seulement la bordure, pas de message.
+   Un formulaire entièrement vert après validation devient bruyant. */
+
+.formulaire__champ--succes
+  .formulaire__saisie:not(.formulaire__saisie--radio):not(
+    .formulaire__saisie--case
+  ) {
+  border-color: var(--couleur-succes);
+}
+
+.formulaire__champ--succes .formulaire__saisie--radio,
+.formulaire__champ--succes .formulaire__saisie--case {
+  accent-color: var(--couleur-succes);
+}
+
+/* ---- Message d'erreur ---- */
+
+.formulaire__erreur {
+  color: var(--couleur-erreur);
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 0.375rem;
+}
+
+/* Le paragraphe existe toujours dans le HTML, même vide.
+   On l'escamote pour éviter un espace fantôme sous chaque champ. */
+.formulaire__erreur:empty {
+  display: none;
+}
+
+/* Le symbole évite de communiquer l'erreur par la couleur seule (WCAG 1.4.1). */
+.formulaire__erreur::before {
+  content: "\26A0";
+  margin-right: 0.375rem;
+}
+
+/* L'animation se déclenche quand JS ajoute le modificateur,
+   donc une seule fois à l'entrée en erreur. */
+.formulaire__champ--erreur .formulaire__erreur {
+  animation: formulaire-erreur-apparition 0.25s ease-out;
+}
+
+@keyframes formulaire-erreur-apparition {
+  from {
+    opacity: 0;
+    transform: translateY(-0.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Astérisque des champs requis ---- */
+
+.formulaire__requis {
+  color: var(--couleur-erreur);
+  margin-left: 0.2rem;
+}
+
+/* ==================================================================
+   Formulaire — mise en page temporaire
+   À remplacer par les utilitaires Tailwind à l'étape suivante.
+   ================================================================== */
+
+.formulaire__champ {
+  margin-bottom: 1.25rem;
+}
+
+.formulaire__etiquette {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.375rem;
+}
+
+.formulaire__option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Dans une ligne radio/case, l'étiquette redevient un texte en ligne. */
+.formulaire__option .formulaire__etiquette {
+  display: inline;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+/* ==================================================================
+   Accessibilité — mouvement réduit
+   ================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .formulaire__champ--erreur .formulaire__erreur {
+    animation: none;
+  }
+
+  .formulaire__saisie {
+    transition: none;
+  }
 }
