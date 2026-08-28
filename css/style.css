@@ -203,3 +203,82 @@ fieldset.formulaire__champ--erreur {
     transition: none;
   }
 }
+
+/* ==================================================================
+   Navigation — apparition du sous-menu
+   Le sous-menu n'utilise pas « hidden » : display:none n'est pas
+   animable. On passe par des propriétés interpolables, pilotées par
+   le modificateur .nav__sousMenu--ouvert ajouté en JavaScript.
+   ================================================================== */
+
+/* ---- Mobile : accordéon dans le flux ---- */
+
+.nav__sousMenu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  /* visibility retire aussi les liens de l'ordre de tabulation :
+     sans elle, on pourrait tabuler dans un menu fermé. */
+  visibility: hidden;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.2s ease,
+    visibility 0s linear 0.3s;
+}
+
+.nav__sousMenu--ouvert {
+  /* Volontairement plus grand que le contenu réel : max-height ne sait
+     pas s'animer vers « auto ». À augmenter si tu ajoutes des jeux. */
+  max-height: 20rem;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+/* ---- Bureau : panneau flottant ---- */
+/* 48rem = le point de rupture « md » de Tailwind. */
+
+@media (min-width: 48rem) {
+  .nav__sousMenu {
+    /* Hors du flux : plus besoin d'animer la hauteur, on anime
+       l'opacité et un léger glissement vers le bas. */
+    max-height: none;
+    overflow: visible;
+    transform: translateY(-0.5rem);
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease,
+      visibility 0s linear 0.18s;
+  }
+
+  .nav__sousMenu--ouvert {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s;
+  }
+}
+
+/* ==================================================================
+   Accessibilité — mouvement réduit
+   ================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .formulaire__champ--erreur .formulaire__erreur {
+    animation: none;
+  }
+
+  .formulaire__saisie {
+    transition: none;
+  }
+
+  /* Le sous-menu apparaît sans transition, mais reste fonctionnel. */
+  .nav__sousMenu,
+  .nav__sousMenu--ouvert {
+    transition: none;
+  }
+
+  .nav__chevron {
+    transition: none;
+  }
+}
