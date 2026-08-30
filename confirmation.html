@@ -5,14 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Studio Chatoyant</title>
+    <title>Inscription confirmée — Studio Chatoyant</title>
     <meta
       name="description"
-      content="Studio Chatoyant - Studio de jeux vidéo québécois."
+      content="Votre inscription à l'infolettre de Studio Chatoyant est confirmée."
     />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="favicon.png" />
+    <link href="css/hover.css" rel="stylesheet" media="all" />
     <script src="js/navigation.js" defer></script>
     <style type="text/tailwindcss">
       @theme {
@@ -191,8 +192,60 @@
     </header>
 
     <main id="contenuPrincipal">
-      <section class="grid grid-cols-12 mx-auto max-w-7xl">
-        <div class=""></div>
+      <!-- ================= Confirmation d'inscription ================= -->
+      <section
+        id="confirmation"
+        class="mx-auto grid min-h-[60vh] max-w-7xl grid-cols-12 content-center px-4 py-16"
+      >
+        <div class="col-span-12 text-center md:col-start-3 md:col-span-8">
+          <!-- Icône décorative : le message texte porte déjà l'information -->
+          <svg
+            class="mx-auto h-16 w-16 text-zinc-900"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="8 12.5 11 15.5 16 9" />
+          </svg>
+
+          <h1 class="mt-6 font-fugaz text-3xl md:text-4xl">
+            Merci, votre inscription est confirmée!
+          </h1>
+
+          <p
+            class="mx-auto mt-4 max-w-prose font-inter leading-relaxed text-zinc-700"
+          >
+            Vous recevrez bientôt des nouvelles du sanctuaire. En attendant, il
+            y a de quoi lire du côté du jeu.
+          </p>
+
+          <div
+            class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          >
+            <a
+              href="moogicalsanctuary.html"
+              class="group inline-flex items-center gap-2 rounded-full bg-zinc-900 px-6 py-3 font-inter font-semibold text-white transition-colors hover:bg-zinc-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+            >
+              Découvrir Moogical Sanctuary
+              <span
+                class="transition-transform duration-200 group-hover:translate-x-1"
+                >&#8594;</span
+              >
+            </a>
+
+            <a
+              href="index.html"
+              class="inline-flex items-center gap-2 rounded-full border-2 border-zinc-300 px-6 py-3 font-inter font-semibold text-zinc-900 transition-colors hover:bg-zinc-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+            >
+              Retour à l'accueil
+            </a>
+          </div>
+        </div>
       </section>
     </main>
 

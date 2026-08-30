@@ -5,14 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Studio Chatoyant</title>
+    <title>Moogical Sanctuary — Studio Chatoyant</title>
     <meta
       name="description"
-      content="Studio Chatoyant - Studio de jeux vidéo québécois."
+      content="Moogical Sanctuary : un jeu cozy où l'on prend soin d'un sanctuaire de vaches. Description, press kit et divulgation IA."
     />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="favicon.png" />
+    <link href="css/hover.css" rel="stylesheet" media="all" />
     <script src="js/navigation.js" defer></script>
     <style type="text/tailwindcss">
       @theme {
@@ -191,8 +192,101 @@
     </header>
 
     <main id="contenuPrincipal">
-      <section class="grid grid-cols-12 mx-auto max-w-7xl">
-        <div class=""></div>
+      <!-- ================= Section 1 : description du jeu ================= -->
+      <section
+        id="description"
+        class="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-4 py-12 md:gap-12"
+      >
+        <!-- Image en premier dans le DOM : elle apparaît en haut sur mobile.
+             Sur bureau, « md:col-start-7 » la place à droite. -->
+        <img
+          class="col-span-12 w-full rounded-2xl object-cover shadow-lg md:col-span-6 md:col-start-7 md:row-start-1"
+          src="media/moogicalsanctuary1.png"
+          alt="À remplacer : description de ce que montre l'image."
+          width="800"
+          height="600"
+        />
+
+        <div class="col-span-12 md:col-span-6 md:col-start-1 md:row-start-1">
+          <p class="font-inter text-sm uppercase tracking-widest text-zinc-500">
+            En développement
+          </p>
+
+          <h1 class="mt-2 font-fugaz text-3xl md:text-4xl">
+            Moogical Sanctuary
+          </h1>
+
+          <p class="mt-4 font-inter leading-relaxed text-zinc-700">
+            Texte à remplacer. Description du jeu : le sanctuaire, les vaches,
+            la boucle de jeu, l'absence de danger.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= Section 2 : press kit ================= -->
+      <section
+        id="pressKit"
+        class="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-4 py-12 md:gap-12"
+      >
+        <!-- Sur bureau, « md:col-start-1 » place l'image à gauche. -->
+        <img
+          class="col-span-12 w-full rounded-2xl object-cover shadow-lg md:col-span-6 md:col-start-1 md:row-start-1"
+          src="media/moogicalsanctuary2.png"
+          alt="À remplacer : description de ce que montre l'image."
+          width="800"
+          height="600"
+        />
+
+        <div class="col-span-12 md:col-span-6 md:col-start-7 md:row-start-1">
+          <p class="font-inter text-sm uppercase tracking-widest text-zinc-500">
+            Pour les médias
+          </p>
+
+          <h2 class="mt-2 font-fugaz text-2xl md:text-3xl">Press kit</h2>
+
+          <p class="mt-4 font-inter leading-relaxed text-zinc-700">
+            Texte à remplacer. Ce que contient la trousse : logos, captures
+            d'écran, fiche technique, contact presse.
+          </p>
+
+          <a
+            href="#"
+            class="group mt-8 inline-flex items-center gap-2 rounded-full bg-zinc-900 px-6 py-3 font-inter font-semibold text-white transition-colors hover:bg-zinc-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+          >
+            Télécharger le press kit
+            <span
+              class="transition-transform duration-200 group-hover:translate-x-1"
+              >&#8594;</span
+            >
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= Section 3 : divulgation IA ================= -->
+      <!-- Pas d'image : le texte occupe une largeur de lecture confortable. -->
+      <section id="divulgationIa" class="border-t border-zinc-200 bg-zinc-50">
+        <div class="mx-auto grid max-w-7xl grid-cols-12 px-4 py-12">
+          <div class="col-span-12 md:col-start-3 md:col-span-8">
+            <p
+              class="font-inter text-sm uppercase tracking-widest text-zinc-500"
+            >
+              Transparence
+            </p>
+
+            <h2 class="mt-2 font-fugaz text-2xl md:text-3xl">
+              Utilisation de l'intelligence artificielle
+            </h2>
+
+            <p class="mt-4 font-inter leading-relaxed text-zinc-700">
+              Texte à remplacer. Précisez ce qui a été fait avec des outils d'IA
+              et ce qui ne l'a pas été : art, musique, écriture, code.
+            </p>
+
+            <p class="mt-4 font-inter leading-relaxed text-zinc-700">
+              Deuxième paragraphe à remplacer, si nécessaire.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
 

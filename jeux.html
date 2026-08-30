@@ -5,14 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Studio Chatoyant</title>
+    <title>Jeux — Studio Chatoyant</title>
     <meta
       name="description"
-      content="Studio Chatoyant - Studio de jeux vidéo québécois."
+      content="Découvrez les jeux de Studio Chatoyant, dont Moogical Sanctuary."
     />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="favicon.png" />
+    <link href="css/hover.css" rel="stylesheet" media="all" />
     <script src="js/navigation.js" defer></script>
     <style type="text/tailwindcss">
       @theme {
@@ -191,8 +192,82 @@
     </header>
 
     <main id="contenuPrincipal">
-      <section class="grid grid-cols-12 mx-auto max-w-7xl">
-        <div class=""></div>
+      <!-- ================= Section 1 : introduction ================= -->
+      <section
+        id="introJeux"
+        class="mx-auto grid max-w-7xl grid-cols-12 px-4 py-12"
+      >
+        <div class="col-span-12 md:col-start-3 md:col-span-8 text-center">
+          <h1 class="font-fugaz text-3xl md:text-4xl">Nos jeux</h1>
+          <p class="mt-4 font-inter leading-relaxed text-zinc-700">
+            Texte d'introduction à remplacer. Quelques phrases sur le type de
+            jeux que fait le studio et sur ce qui les relie entre eux.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= Section 2 : Moogical Sanctuary ================= -->
+      <section
+        id="moogicalSanctuary"
+        class="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-4 py-12 md:gap-12"
+      >
+        <!-- Image en premier dans le DOM : elle apparaît en haut sur mobile -->
+        <img
+          class="col-span-12 w-full rounded-2xl object-cover shadow-lg md:col-span-6 md:col-start-7 md:row-start-1"
+          src="media/moogicalsanctuary1.png"
+          alt="À remplacer : description de ce que montre l'image."
+          width="800"
+          height="600"
+        />
+
+        <div class="col-span-12 md:col-span-6 md:col-start-1 md:row-start-1">
+          <p class="font-inter text-sm uppercase tracking-widest text-zinc-500">
+            En développement
+          </p>
+
+          <h2 class="mt-2 font-fugaz text-2xl md:text-3xl">
+            Moogical Sanctuary
+          </h2>
+
+          <p class="mt-4 font-inter leading-relaxed text-zinc-700">
+            Texte à remplacer. Une courte présentation du jeu : le sanctuaire,
+            les vaches, l'absence de danger.
+          </p>
+
+          <a
+            href="moogicalsanctuary.html"
+            class="group mt-8 inline-flex items-center gap-2 rounded-full bg-zinc-900 px-6 py-3 font-inter font-semibold text-white transition-colors hover:bg-zinc-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+          >
+            En savoir plus
+            <span
+              class="transition-transform duration-200 group-hover:translate-x-1"
+              >&#8594;</span
+            >
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= Section 3 : à venir ================= -->
+      <!-- Ajoutée pour atteindre le minimum de trois sections exigé. -->
+      <section
+        id="prochainement"
+        class="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-4 py-12"
+      >
+        <div class="col-span-12 text-center">
+          <h2 class="font-fugaz text-2xl md:text-3xl">Prochainement</h2>
+          <p class="mt-4 font-inter leading-relaxed text-zinc-700">
+            Texte à remplacer.
+          </p>
+        </div>
+
+        <div
+          class="col-span-12 rounded-2xl border-2 border-dashed border-zinc-300 p-10 text-center md:col-start-4 md:col-span-6"
+        >
+          <p class="font-fugaz text-2xl text-zinc-400">???</p>
+          <p class="mt-2 font-inter text-sm text-zinc-500">
+            Un deuxième projet est en préparation.
+          </p>
+        </div>
       </section>
     </main>
 
