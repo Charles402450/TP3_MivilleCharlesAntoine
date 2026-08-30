@@ -282,3 +282,13 @@ fieldset.formulaire__champ--erreur {
     transition: none;
   }
 }
+
+/* ==================================================================
+   index.html — section « hero »
+   ================================================================== */
+.hero {
+  background-image: url("../media/herosection.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
