@@ -202,6 +202,10 @@ fieldset.formulaire__champ--erreur {
   .formulaire__saisie {
     transition: none;
   }
+
+  .bouton__fleche {
+    transition: none;
+  }
 }
 
 /* ==================================================================
@@ -291,4 +295,28 @@ fieldset.formulaire__champ--erreur {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* ==================================================================
+   Boutons — flèche animée au survol
+   ================================================================== */
+
+/* Un <span> est en ligne par défaut, et « transform » n'a aucun effet
+   sur un élément en ligne : d'où le inline-block. */
+.bouton__fleche {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* :focus-visible en plus de :hover pour que l'effet existe aussi
+   au clavier, pas seulement à la souris. */
+.bouton:hover .bouton__fleche,
+.bouton:focus-visible .bouton__fleche {
+  transform: translateX(0.35rem);
+}
+
+/* Variante pour les boutons de retour, où la flèche pointe à gauche. */
+.bouton--retour:hover .bouton__fleche,
+.bouton--retour:focus-visible .bouton__fleche {
+  transform: translateX(-0.35rem);
 }
