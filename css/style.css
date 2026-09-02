@@ -206,6 +206,20 @@ fieldset.formulaire__champ--erreur {
   .bouton__fleche {
     transition: none;
   }
+
+  /* Le dégradé reste visible, mais figé. */
+  .titre-chatoyant {
+    animation: none;
+  }
+
+  .bouton--chatoyant {
+    transition: none;
+  }
+
+  .bouton--chatoyant:hover,
+  .bouton--chatoyant:focus-visible {
+    animation: none;
+  }
 }
 
 /* ==================================================================
@@ -319,4 +333,82 @@ fieldset.formulaire__champ--erreur {
 .bouton--retour:hover .bouton__fleche,
 .bouton--retour:focus-visible .bouton__fleche {
   transform: translateX(-0.35rem);
+}
+
+.bouton--chatoyant {
+  position: relative;
+  /* Crée un contexte d'empilement : le pseudo-élément en z-index -1
+     reste au-dessus du fond du bouton, mais sous son texte. */
+  isolation: isolate;
+}
+
+.bouton--chatoyant::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit; /* suit le rounded-full du bouton */
+
+  background-image: linear-gradient(
+    100deg,
+    var(--chatoyant-1) 0%,
+    var(--chatoyant-2) 50%,
+    var(--chatoyant-1) 100%
+  );
+  background-size: 200% 100%;
+
+  /* Invisible au repos : c'est l'opacité qu'on transitionne,
+     puisqu'une image de fond ne sait pas s'animer. */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bouton--chatoyant:hover::before,
+.bouton--chatoyant:focus-visible::before {
+  opacity: 1;
+  animation: chatoiement 3s ease-in-out infinite alternate;
+}
+
+/* ==================================================================
+   Titre chatoyant — dégradé animé sur le texte
+   Le dégradé est peint dans la boîte de l'élément, puis découpé à la
+   forme des lettres par background-clip. Le texte doit donc être
+   transparent pour qu'on voie le dégradé au travers.
+   ================================================================== */
+
+:root {
+  --chatoyant-1: #ff1fdd; /* magenta — 3,06:1 sur #FDF8F0 */
+  --chatoyant-2: #0096d1; /* cyan    — 3,17:1 sur #FDF8F0 */
+}
+
+.titre-chatoyant {
+  /* Dégradé symétrique : la même couleur aux deux extrémités,
+     ce qui évite toute rupture visible pendant l'aller-retour. */
+  background-image: linear-gradient(
+    100deg,
+    var(--chatoyant-1) 0%,
+    var(--chatoyant-2) 50%,
+    var(--chatoyant-1) 100%
+  );
+
+  /* Le dégradé fait deux fois la largeur de l'élément : c'est ce
+     surplus qu'on fait glisser pour créer le chatoiement. */
+  background-size: 200% 100%;
+
+  -webkit-background-clip: text; /* requis par Safari et Chrome */
+  background-clip: text;
+  color: transparent;
+
+  /* « alternate » fait revenir le dégradé sur ses pas au lieu de
+     repartir à zéro : aucun saut à la fin du cycle. */
+  animation: chatoiement 5s ease-in-out infinite alternate;
+}
+
+@keyframes chatoiement {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
 }
