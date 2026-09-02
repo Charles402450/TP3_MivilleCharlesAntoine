@@ -306,34 +306,30 @@
       </section>
 
       <!-- ================= Section 2 : press kit ================= -->
-      <section
-        id="pressKit"
-        class="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-4 py-12 md:gap-12"
-      >
-        <!-- Sur bureau, « md:col-start-1 » place l'image à gauche. -->
-        <img
-          class="col-span-12 w-full rounded-2xl object-cover shadow-lg md:col-span-6 md:col-start-1 md:row-start-1"
-          src="media/moogicalsanctuary2.png"
-          alt="À remplacer : description de ce que montre l'image."
-          width="800"
-          height="600"
-        />
+      <section id="pressKit" class="bg-white">
+        <div
+          class="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-4 py-16"
+        >
+          <div class="col-span-12 md:col-span-7">
+            <h2 class="mt-2 font-fugaz text-3xl md:text-4xl">Press kit</h2>
 
-        <div class="col-span-12 md:col-span-6 md:col-start-7 md:row-start-1">
-          <h2 class="mt-2 font-fugaz text-2xl md:text-3xl">Press kit</h2>
+            <p
+              class="mt-4 max-w-prose font-inter leading-relaxed text-zinc-700"
+            >
+              Ce que contient la trousse: logos, captures d'écran, fiche
+              technique, contact pour la presse.
+            </p>
+          </div>
 
-          <p class="mt-4 font-inter leading-relaxed text-zinc-700">
-            Ce que contient la trousse : logos, captures d'écran, fiche
-            technique, contact pour la presse.
-          </p>
-
-          <a
-            href="#"
-            class="bouton mt-8 inline-flex items-center gap-2 rounded-full bouton--chatoyant px-6 py-3 font-inter font-semibold text-white transition-colors bg-zinc-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
-          >
-            Télécharger le press kit
-            <span class="bouton__fleche">&#8594;</span>
-          </a>
+          <div class="col-span-12 md:col-span-5 md:justify-self-end">
+            <a
+              href="contact.html#sectionInfolettre"
+              class="bouton inline-flex items-center gap-2 rounded-full bouton--chatoyant px-6 py-3 font-inter font-semibold text-white transition-colors bg-zinc-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+            >
+              Télécharger le press kit
+              <span class="bouton__fleche" aria-hidden="true">&#8594;</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -373,16 +369,11 @@
           <h2 class="font-fugaz text-2xl md:text-3xl">Questions fréquentes</h2>
           <details class="group [&_summary::-webkit-details-marker]:hidden">
             <summary
-              class="flex cursor-pointer items-center justify-between gap-4 rounded-lg border border-gray-200 bg-white px-4 py-3 font-medium text-gray-900 hover:bg-gray-50"
+              class="faq__question cursor-pointer rounded-lg border border-gray-200 bg-white px-4 py-3 font-medium text-gray-900 hover:bg-gray-50"
             >
-              <span
-                >Combien coûtera Moogical Sanctuary? Y aura-t-il des systèmes de
-                monétisation?</span
-              >
-
               <svg
                 aria-hidden="true"
-                class="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180"
+                class="faq__chevron size-5"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -392,11 +383,15 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M19 9l-7 7-7-7"
+                  d="M9 5l7 7-7 7"
                 />
               </svg>
-            </summary>
 
+              <span
+                >Combien coûtera Moogical Sanctuary? Y aura-t-il des systèmes de
+                monétisation?</span
+              >
+            </summary>
             <div class="p-4">
               <p class="text-gray-700">
                 Le jeu sera vendu à un prix fixe de 5$ CAD avant taxes. Le jeu
@@ -409,13 +404,11 @@
 
           <details class="group [&_summary::-webkit-details-marker]:hidden">
             <summary
-              class="flex cursor-pointer items-center justify-between gap-4 rounded-lg border border-gray-200 bg-white px-4 py-3 font-medium text-gray-900 hover:bg-gray-50"
+              class="faq__question cursor-pointer rounded-lg border border-gray-200 bg-white px-4 py-3 font-medium text-gray-900 hover:bg-gray-50"
             >
-              <span>Quelles langues sont supportées?</span>
-
               <svg
                 aria-hidden="true"
-                class="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180"
+                class="faq__chevron size-5"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -425,9 +418,10 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M19 9l-7 7-7-7"
+                  d="M9 5l7 7-7 7"
                 />
               </svg>
+              <span>Quelles langues sont supportées?</span>
             </summary>
 
             <div class="p-4">
@@ -441,13 +435,11 @@
 
           <details class="group [&_summary::-webkit-details-marker]:hidden">
             <summary
-              class="flex cursor-pointer items-center justify-between gap-4 rounded-lg border border-gray-200 bg-white px-4 py-3 font-medium text-gray-900 hover:bg-gray-50"
+              class="faq__question cursor-pointer rounded-lg border border-gray-200 bg-white px-4 py-3 font-medium text-gray-900 hover:bg-gray-50"
             >
-              <span>Sur quelles plateformes le jeu sera-t-il disponible?</span>
-
               <svg
                 aria-hidden="true"
-                class="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180"
+                class="faq__chevron size-5"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -457,15 +449,16 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M19 9l-7 7-7-7"
+                  d="M9 5l7 7-7 7"
                 />
               </svg>
+              <span>Sur quelles plateformes le jeu sera-t-il disponible?</span>
             </summary>
 
             <div class="p-4">
               <p class="text-gray-700">
-                Pour le moment, le jeu n'est prévu que pour Windows et Mac via
-                la plateforme Steam.
+                Pour le moment, le jeu est prévu pour Windows et Mac via la
+                plateforme Steam.
               </p>
             </div>
           </details>

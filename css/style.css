@@ -220,6 +220,10 @@ fieldset.formulaire__champ--erreur {
   .bouton--chatoyant:focus-visible {
     animation: none;
   }
+
+  .faq__chevron {
+    transition: none;
+  }
 }
 
 /* ==================================================================
@@ -411,4 +415,32 @@ fieldset.formulaire__champ--erreur {
   to {
     background-position: 100% 50%;
   }
+}
+
+/* ==================================================================
+   FAQ — question et chevron
+   Le sélecteur combine la balise et la classe (spécificité 0,1,1),
+   ce qui l'emporte sur les utilitaires Tailwind à classe unique.
+   ================================================================== */
+
+summary.faq__question {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  list-style: none; /* masque le marqueur sur Firefox et Chrome */
+}
+
+summary.faq__question::-webkit-details-marker {
+  display: none; /* masque celui de Safari */
+}
+
+.faq__chevron {
+  flex: 0 0 auto; /* jamais compressé ni étiré */
+  margin-top: 0.15rem; /* aligné sur la première ligne du texte */
+  transition: transform 0.3s ease;
+}
+
+/* Pas besoin de « group » : l'attribut open suffit. */
+details[open] .faq__chevron {
+  transform: rotate(90deg);
 }
