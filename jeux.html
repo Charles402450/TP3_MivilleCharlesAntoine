@@ -18,8 +18,8 @@
     <style type="text/tailwindcss">
       @theme {
         /* Typographies */
-        --font-fugaz: "Fugaz One", sans-serif;
-        --font-inter: "Inter", sans-serif;
+        --font-fraunces: "Fraunces", serif;
+        --font-poppins: "Poppins", sans-serif;
       }
     </style>
   </head>
@@ -50,7 +50,7 @@
                 height="36"
                 class="h-9 w-9"
               />
-              <span class="font-fugaz text-lg tracking-wide"
+              <span class="font-fraunces font-[700] text-lg tracking-wide"
                 >Studio Chatoyant</span
               >
             </a>
@@ -118,7 +118,7 @@
                 <li class="nav__item">
                   <a
                     href="apropos.html"
-                    class="nav__lien block rounded-md px-3 py-2 font-inter transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
+                    class="nav__lien block rounded-md px-3 py-2 font-poppins transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
                   >
                     À propos
                   </a>
@@ -129,7 +129,7 @@
                     <!-- Le lien occupe toute la largeur restante sur mobile -->
                     <a
                       href="jeux.html"
-                      class="nav__lien flex-1 rounded-l-md px-3 py-2 font-inter transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:block md:rounded-md"
+                      class="nav__lien flex-1 rounded-l-md px-3 py-2 font-poppins transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:block md:rounded-md"
                     >
                       Jeux
                     </a>
@@ -167,7 +167,7 @@
                     <li>
                       <a
                         href="moogicalsanctuary.html"
-                        class="nav__lien nav__lien--sousMenu block rounded-md px-3 py-2 font-inter text-sm transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:rounded-none"
+                        class="nav__lien nav__lien--sousMenu block rounded-md px-3 py-2 font-poppins text-sm transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:rounded-none"
                       >
                         Moogical Sanctuary
                       </a>
@@ -179,7 +179,7 @@
                 <li class="nav__item">
                   <a
                     href="contact.html"
-                    class="nav__lien block rounded-md px-3 py-2 font-inter transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
+                    class="nav__lien block rounded-md px-3 py-2 font-poppins transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
                   >
                     Contact
                   </a>
@@ -254,8 +254,10 @@
         class="mx-auto grid max-w-7xl grid-cols-12 px-4 py-12"
       >
         <div class="col-span-12 md:col-start-3 md:col-span-8 text-center">
-          <h1 class="font-fugaz text-3xl md:text-4xl">Nos jeux</h1>
-          <p class="mt-4 font-inter leading-relaxed text-zinc-700">
+          <h1 class="font-fraunces font-[700] text-3xl md:text-4xl">
+            Nos jeux
+          </h1>
+          <p class="mt-4 font-poppins leading-relaxed text-zinc-700">
             Texte d'introduction à remplacer. Quelques phrases sur le type de
             jeux que fait le studio et sur ce qui les relie entre eux.
           </p>
@@ -277,45 +279,22 @@
         />
 
         <div class="col-span-12 md:col-span-6 md:col-start-1 md:row-start-1">
-          <h2 class="mt-2 font-fugaz text-2xl md:text-3xl">
+          <h2 class="mt-2 font-fraunces text-2xl font-[600] md:text-3xl">
             Moogical Sanctuary
           </h2>
 
-          <p class="mt-4 font-inter leading-relaxed text-zinc-700">
+          <p class="mt-4 font-poppins leading-relaxed text-zinc-700">
             Texte à remplacer. Une courte présentation du jeu : le sanctuaire,
             les vaches, l'absence de danger.
           </p>
 
           <a
             href="moogicalsanctuary.html"
-            class="bouton mt-8 inline-flex items-center gap-2 rounded-full bouton--chatoyant px-6 py-3 font-inter font-semibold text-white transition-colors bg-zinc-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+            class="bouton mt-8 inline-flex items-center gap-2 rounded-full bouton--chatoyant px-6 py-3 font-poppins font-semibold text-white transition-colors bg-zinc-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
           >
             En savoir plus
             <span class="bouton__fleche">&#8594;</span>
           </a>
-        </div>
-      </section>
-
-      <!-- ================= Section 3 : à venir ================= -->
-      <!-- Ajoutée pour atteindre le minimum de trois sections exigé. -->
-      <section
-        id="prochainement"
-        class="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-4 py-12"
-      >
-        <div class="col-span-12 text-center">
-          <h2 class="font-fugaz text-2xl md:text-3xl">Prochainement</h2>
-          <p class="mt-4 font-inter leading-relaxed text-zinc-700">
-            Texte à remplacer.
-          </p>
-        </div>
-
-        <div
-          class="col-span-12 rounded-2xl border-2 border-dashed border-zinc-300 p-10 text-center md:col-start-4 md:col-span-6"
-        >
-          <p class="font-fugaz text-2xl text-zinc-400">???</p>
-          <p class="mt-2 font-inter text-sm text-zinc-500">
-            Un deuxième projet est en préparation.
-          </p>
         </div>
       </section>
     </main>

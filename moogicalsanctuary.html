@@ -18,8 +18,8 @@
     <style type="text/tailwindcss">
       @theme {
         /* Typographies */
-        --font-fugaz: "Fugaz One", sans-serif;
-        --font-inter: "Inter", sans-serif;
+        --font-fraunces: "Fraunces", serif;
+        --font-poppins: "Poppins", sans-serif;
       }
     </style>
   </head>
@@ -50,7 +50,7 @@
                 height="36"
                 class="h-9 w-9"
               />
-              <span class="font-fugaz text-lg tracking-wide"
+              <span class="font-fraunces font-[700] text-lg tracking-wide"
                 >Studio Chatoyant</span
               >
             </a>
@@ -118,7 +118,7 @@
                 <li class="nav__item">
                   <a
                     href="apropos.html"
-                    class="nav__lien block rounded-md px-3 py-2 font-inter transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
+                    class="nav__lien block rounded-md px-3 py-2 font-poppins transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
                   >
                     À propos
                   </a>
@@ -129,7 +129,7 @@
                     <!-- Le lien occupe toute la largeur restante sur mobile -->
                     <a
                       href="jeux.html"
-                      class="nav__lien flex-1 rounded-l-md px-3 py-2 font-inter transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:block md:rounded-md"
+                      class="nav__lien flex-1 rounded-l-md px-3 py-2 font-poppins transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:block md:rounded-md"
                     >
                       Jeux
                     </a>
@@ -167,7 +167,7 @@
                     <li>
                       <a
                         href="moogicalsanctuary.html"
-                        class="nav__lien nav__lien--sousMenu block rounded-md px-3 py-2 font-inter text-sm transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:rounded-none"
+                        class="nav__lien nav__lien--sousMenu block rounded-md px-3 py-2 font-poppins text-sm transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:rounded-none"
                       >
                         Moogical Sanctuary
                       </a>
@@ -179,7 +179,7 @@
                 <li class="nav__item">
                   <a
                     href="contact.html"
-                    class="nav__lien block rounded-md px-3 py-2 font-inter transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
+                    class="nav__lien block rounded-md px-3 py-2 font-poppins transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
                   >
                     Contact
                   </a>
@@ -289,11 +289,11 @@
         />
 
         <div class="col-span-12 md:col-span-6 md:col-start-1 md:row-start-1">
-          <h1 class="mt-2 font-fugaz text-3xl md:text-4xl">
+          <h1 class="mt-2 font-fraunces font-[700] text-3xl md:text-4xl">
             Moogical Sanctuary
           </h1>
 
-          <p class="mt-4 font-inter leading-relaxed text-zinc-700">
+          <p class="mt-4 font-poppins leading-relaxed text-zinc-700">
             Prenez en charge un sanctuaire pour vaches et aidez-les à se sentir
             chez elles. Nourrissez-les, caressez-les et assurez-vous qu'elles
             sont heureuses et en bonne santé. Chaque vache a sa propre
@@ -311,10 +311,12 @@
           class="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-4 py-16"
         >
           <div class="col-span-12 md:col-span-7">
-            <h2 class="mt-2 font-fugaz text-3xl md:text-4xl">Press kit</h2>
+            <h2 class="mt-2 font-fraunces font-[600] text-2xl md:text-3xl">
+              Press kit
+            </h2>
 
             <p
-              class="mt-4 max-w-prose font-inter leading-relaxed text-zinc-700"
+              class="mt-4 max-w-prose font-poppins leading-relaxed text-zinc-700"
             >
               Ce que contient la trousse: logos, captures d'écran, fiche
               technique, contact pour la presse.
@@ -323,8 +325,8 @@
 
           <div class="col-span-12 md:col-span-5 md:justify-self-end">
             <a
-              href="contact.html#sectionInfolettre"
-              class="bouton inline-flex items-center gap-2 rounded-full bouton--chatoyant px-6 py-3 font-inter font-semibold text-white transition-colors bg-zinc-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+              href="#"
+              class="bouton inline-flex items-center gap-2 rounded-full bouton--chatoyant px-6 py-3 font-poppins font-semibold text-white transition-colors bg-zinc-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
             >
               Télécharger le press kit
               <span class="bouton__fleche" aria-hidden="true">&#8594;</span>
@@ -338,18 +340,18 @@
       <section id="divulgationIa" class="border-t border-zinc-200 bg-zinc-50">
         <div class="mx-auto grid max-w-7xl grid-cols-12 px-4 py-12">
           <div class="col-span-12 md:col-start-3 md:col-span-8">
-            <h2 class="mt-2 font-fugaz text-2xl md:text-3xl">
+            <h2 class="mt-2 font-fraunces font-[600] text-2xl md:text-3xl">
               Utilisation de l'intelligence artificielle
             </h2>
 
-            <p class="mt-4 font-inter leading-relaxed text-zinc-700">
+            <p class="mt-4 font-poppins leading-relaxed text-zinc-700">
               L'intelligence artificielle a été utilisée dans le contexte de la
               programmation du jeu pour générer certaines parties de code.
               L'intelligence artificielle n'a pas été utilisée pour quoi que ce
               soit d'autre lors de la création du jeu Moogical Sanctuary.
             </p>
 
-            <p class="mt-4 font-inter leading-relaxed text-zinc-700">
+            <p class="mt-4 font-poppins leading-relaxed text-zinc-700">
               Nous croyons fermement en la valeur des artistes et des créateurs
               et nous nous engageons à ne pas utiliser d'intelligence
               artificielle pour tout ce qui est art, musique, écriture,
@@ -366,7 +368,9 @@
         class="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-4 py-12 md:gap-12"
       >
         <div class="col-span-12 md:col-start-3 md:col-span-8">
-          <h2 class="font-fugaz text-2xl md:text-3xl">Questions fréquentes</h2>
+          <h2 class="font-fraunces pb-4 font-[600] text-2xl md:text-3xl">
+            Questions fréquentes
+          </h2>
           <details class="group [&_summary::-webkit-details-marker]:hidden">
             <summary
               class="faq__question cursor-pointer rounded-lg border border-gray-200 bg-white px-4 py-3 font-medium text-gray-900 hover:bg-gray-50"
@@ -387,13 +391,13 @@
                 />
               </svg>
 
-              <span
+              <span class="font-poppins"
                 >Combien coûtera Moogical Sanctuary? Y aura-t-il des systèmes de
                 monétisation?</span
               >
             </summary>
             <div class="p-4">
-              <p class="text-gray-700">
+              <p class="text-gray-700 font-poppins">
                 Le jeu sera vendu à un prix fixe de 5$ CAD avant taxes. Le jeu
                 ne contiendra jamais de microtransactions ni de publicités.
                 Toute mise à jour future sera gratuite, inclus dans le prix
@@ -421,11 +425,11 @@
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-              <span>Quelles langues sont supportées?</span>
+              <span class="font-poppins">Quelles langues sont supportées?</span>
             </summary>
 
             <div class="p-4">
-              <p class="text-gray-700">
+              <p class="text-gray-700 font-poppins">
                 Initiallement, le jeu sera disponible en français et en anglais.
                 Nous prévoyons d'ajouter de nouvelles langues par la suite, une
                 fois l'expérience de jeu solidifiée.
@@ -452,11 +456,13 @@
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-              <span>Sur quelles plateformes le jeu sera-t-il disponible?</span>
+              <span class="font-poppins"
+                >Sur quelles plateformes le jeu sera-t-il disponible?</span
+              >
             </summary>
 
             <div class="p-4">
-              <p class="text-gray-700">
+              <p class="text-gray-700 font-poppins">
                 Pour le moment, le jeu est prévu pour Windows et Mac via la
                 plateforme Steam.
               </p>
