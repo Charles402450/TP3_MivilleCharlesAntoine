@@ -1,0 +1,89 @@
+/* ==================================================================
+   Hero — décor SVG animé
+   Chaque forme est un élément du DOM, donc animable individuellement.
+   Les grandes formes bougent lentement, les petites plus vite : c'est
+   ce décalage qui donne l'impression de profondeur.
+   ================================================================== */
+
+.hero__decor {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* Le décor ne doit jamais intercepter un clic destiné au contenu. */
+  pointer-events: none;
+}
+
+/* En SVG, transform-origin se calcule par défaut depuis le coin
+   supérieur gauche du canevas, pas depuis la forme. « fill-box »
+   recentre l'origine sur la forme elle-même — sans cette ligne,
+   les éléments partent en orbite à travers l'écran. */
+.hero__forme {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* ---- Rotations : réservées aux formes anguleuses ---- */
+/* Faire tourner un disque uni ne se verrait pas. */
+
+.hero__forme--tourne-lent {
+  animation: hero-rotation 48s linear infinite;
+}
+
+.hero__forme--tourne-moyen {
+  animation: hero-rotation 30s linear infinite;
+}
+
+.hero__forme--tourne-rapide {
+  animation: hero-rotation 16s linear infinite;
+}
+
+/* ---- Flottement vertical ---- */
+
+.hero__forme--flotte-lent {
+  animation: hero-flottement 11s ease-in-out infinite;
+}
+
+.hero__forme--flotte-rapide {
+  animation: hero-flottement 6s ease-in-out infinite;
+}
+
+/* ---- Pulsation ---- */
+
+.hero__forme--pulse-lent {
+  animation: hero-pulsation 9s ease-in-out infinite;
+}
+
+.hero__forme--pulse-rapide {
+  animation: hero-pulsation 5s ease-in-out infinite;
+}
+
+@keyframes hero-rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hero-flottement {
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes hero-pulsation {
+  50% {
+    transform: scale(1.14);
+  }
+}
+
+/* ==================================================================
+   Accessibilité — mouvement réduit
+   À FUSIONNER avec ton bloc prefers-reduced-motion existant.
+   Le décor reste affiché, simplement immobile.
+   ================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__forme {
+    animation: none;
+  }
+}

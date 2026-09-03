@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/hero.css" />
     <link rel="icon" href="favicon.png" />
     <link href="css/hover.css" rel="stylesheet" media="all" />
     <script src="js/navigation.js" defer></script>
@@ -193,18 +194,145 @@
 
     <main id="contenuPrincipal">
       <!-- ================= Section 1 : hero ================= -->
+      <!-- ==================================================================
+     Section hero — remplace la <section id="hero"> actuelle.
+     Le PNG media/herosection.png n'est plus nécessaire.
+     ================================================================== -->
+
       <section
         id="hero"
-        class="flex min-h-[70vh] items-center justify-center bg-[url('media/herosection.png')] bg-contain bg-center bg-no-repeat"
+        class="relative flex min-h-[70vh] items-center justify-center overflow-hidden px-4"
       >
-        <div class="mx-auto grid max-w-7xl grid-cols-12 px-4">
+        <!--
+    Décor purement ornemental : aria-hidden le retire de l'arbre
+    d'accessibilité, focusable="false" empêche Internet Explorer et
+    certains lecteurs d'écran de le placer dans l'ordre de tabulation.
+  -->
+        <svg
+          class="hero__decor"
+          viewBox="0 0 1200 675"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid meet"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <defs>
+            <linearGradient id="degradeCadre" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#27272a" />
+              <stop offset="30%" stop-color="#d4d4d8" />
+              <stop offset="55%" stop-color="#27272a" />
+              <stop offset="80%" stop-color="#a1a1aa" />
+              <stop offset="100%" stop-color="#27272a" />
+            </linearGradient>
+          </defs>
+
+          <!-- ---- Cadre ---- -->
+          <rect
+            x="150"
+            y="77"
+            width="893"
+            height="521"
+            rx="10"
+            fill="none"
+            stroke="url(#degradeCadre)"
+            stroke-width="9"
+          />
+
+          <!-- ---- Grandes formes : mouvement lent ---- -->
+
+          <circle
+            class="hero__forme hero__forme--flotte-lent"
+            cx="251"
+            cy="84"
+            r="70"
+            fill="#ff6ee8"
+          />
+
+          <circle
+            class="hero__forme hero__forme--pulse-lent"
+            cx="70"
+            cy="323"
+            r="35"
+            fill="#ffcb42"
+          />
+
+          <!-- Losange : un carré déjà pivoté de 45°, d'où le <g> qui porte
+         l'inclinaison de base pendant que la classe anime l'enfant. -->
+          <g transform="rotate(45 985 567)">
+            <rect
+              class="hero__forme hero__forme--tourne-lent"
+              x="933"
+              y="515"
+              width="104"
+              height="104"
+              fill="#ffcb42"
+            />
+          </g>
+
+          <!-- ---- Formes moyennes ---- -->
+
+          <polygon
+            class="hero__forme hero__forme--tourne-moyen"
+            points="70,218 171,246 140,145"
+            fill="#4ecdf5"
+          />
+
+          <polygon
+            class="hero__forme hero__forme--tourne-moyen"
+            points="1005,392 1078,412 1032,472"
+            fill="#4ecdf5"
+          />
+
+          <g transform="rotate(-12 1039 326)">
+            <rect
+              class="hero__forme hero__forme--tourne-moyen"
+              x="1013"
+              y="300"
+              width="52"
+              height="52"
+              fill="#ff6ee8"
+            />
+          </g>
+
+          <!-- ---- Petites formes : mouvement plus vif ---- -->
+
+          <circle
+            class="hero__forme hero__forme--pulse-rapide"
+            cx="218"
+            cy="201"
+            r="14"
+            fill="#ffcb42"
+          />
+
+          <circle
+            class="hero__forme hero__forme--flotte-rapide"
+            cx="994"
+            cy="199"
+            r="16"
+            fill="#ffcb42"
+          />
+
+          <g transform="rotate(8 104 453)">
+            <rect
+              class="hero__forme hero__forme--tourne-rapide"
+              x="87"
+              y="436"
+              width="34"
+              height="34"
+              fill="#ff6ee8"
+            />
+          </g>
+        </svg>
+
+        <!-- Contenu : « relative z-10 » le place au-dessus du décor -->
+        <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-12 px-4">
           <div class="col-span-12 text-center md:col-start-3 md:col-span-8">
             <h1
-              class="titre-chatoyant font-fraunces text-3xl md:text-5xl font-[900]"
+              class="titre-chatoyant font-fraunces text-3xl font-[900] md:text-5xl"
             >
               Studio Chatoyant
             </h1>
-            <p class="mt-4 font-poppins font-[500] text-xl text-zinc-700">
+            <p class="mt-4 font-poppins text-xl font-[500] text-zinc-700">
               Colorer en dehors du canvas.
             </p>
           </div>
