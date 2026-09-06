@@ -5,14 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Studio Chatoyant</title>
+    <title>À propos — Studio Chatoyant</title>
     <meta
       name="description"
-      content="Studio Chatoyant - Studio de jeux vidéo québécois."
+      content="Découvrez Studio Chatoyant : sa mission, sa vision, ses valeurs et son équipe."
     />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="favicon.png" />
+    <link href="css/hover.css" rel="stylesheet" media="all" />
+    <link href="css/hover.css" rel="stylesheet" media="all" />
     <script src="js/navigation.js" defer></script>
     <style type="text/tailwindcss">
       @theme {
@@ -33,7 +35,7 @@
     </a>
 
     <header class="nav relative bg-zinc-900 text-zinc-100 shadow-md">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="mx-auto max-w-7xl px-12">
         <div class="grid grid-cols-12 items-center gap-4 py-3">
           <!-- ---------- Logo (gauche) ---------- -->
           <div class="col-span-8 md:col-span-4 lg:col-span-3">
@@ -49,7 +51,7 @@
                 height="36"
                 class="h-9 w-9"
               />
-              <span class="font-fraunces font-[700] text-lg tracking-wide"
+              <span class="font-fugaz text-lg tracking-wide"
                 >Studio Chatoyant</span
               >
             </a>
@@ -117,7 +119,7 @@
                 <li class="nav__item">
                   <a
                     href="apropos.html"
-                    class="nav__lien block rounded-md px-3 py-2 font-poppins transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
+                    class="nav__lien block rounded-md px-3 py-2 font-inter transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
                   >
                     À propos
                   </a>
@@ -128,7 +130,7 @@
                     <!-- Le lien occupe toute la largeur restante sur mobile -->
                     <a
                       href="jeux.html"
-                      class="nav__lien flex-1 rounded-l-md px-3 py-2 font-poppins transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:block md:rounded-md"
+                      class="nav__lien flex-1 rounded-l-md px-3 py-2 font-inter transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:block md:rounded-md"
                     >
                       Jeux
                     </a>
@@ -166,7 +168,7 @@
                     <li>
                       <a
                         href="moogicalsanctuary.html"
-                        class="nav__lien nav__lien--sousMenu block rounded-md px-3 py-2 font-poppins text-sm transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:rounded-none"
+                        class="nav__lien nav__lien--sousMenu block rounded-md px-3 py-2 font-inter text-sm transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:rounded-none"
                       >
                         Moogical Sanctuary
                       </a>
@@ -178,7 +180,7 @@
                 <li class="nav__item">
                   <a
                     href="contact.html"
-                    class="nav__lien block rounded-md px-3 py-2 font-poppins transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
+                    class="nav__lien block rounded-md px-3 py-2 font-inter transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
                   >
                     Contact
                   </a>
@@ -191,15 +193,19 @@
     </header>
 
     <main id="contenuPrincipal">
-      <div
-        class="mx-auto grid max-w-7xl grid-cols-12 items-center gap-8 px-4 py-12 md:gap-12"
+      <!-- ================= Fil d'Ariane et titre ================= -->
+      <section
+        id="introApropos"
+        class="mx-auto grid max-w-7xl grid-cols-12 gap-4 px-12 pt-8 pb-12"
       >
-        <nav class="col-span-12" aria-label="Breadcrumb">
-          <ol class="flex items-center gap-1 text-sm text-gray-700">
+        <nav class="col-span-12" aria-label="Fil d'Ariane">
+          <ol
+            class="flex flex-wrap items-center gap-1 font-poppins text-sm text-zinc-600"
+          >
             <li>
               <a
                 href="index.html"
-                class="block transition-colors hover:text-gray-900"
+                class="block rounded transition-colors hover:text-zinc-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
                 aria-label="Accueil"
               >
                 <svg
@@ -220,9 +226,8 @@
               </a>
             </li>
 
-            <li class="rtl:rotate-180">
+            <li aria-hidden="true">
               <svg
-                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 class="size-4"
                 viewBox="0 0 20 20"
@@ -236,129 +241,583 @@
               </svg>
             </li>
 
+            <!-- Page courante : un <span>, pas un lien vers soi-même -->
             <li>
-              <a
-                href="apropos.html"
-                class="block transition-colors hover:text-gray-900"
-              >
-                À propos
-              </a>
+              <span class="text-zinc-900" aria-current="page"> À propos </span>
             </li>
           </ol>
         </nav>
-      </div>
-      <div class="col-start-1 col-span-12">
-        <h1 class="font-fraunces font-[700] text-3xl md:text-4xl">À propos</h1>
-      </div>
-      <section class="grid grid-cols-12 mx-auto max-w-7xl">
-        <div class="col-start-1 col-span-12">
-          <h2 class="text-center text-2xl font-[700]">Studio Chatoyant</h2>
-        </div>
 
-        <div class="col-start-1 col-span-6">
-          <h3 class="text-poppins font-[700] text-lg pb-2">Titre titre</h3>
-          <p>
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum
-          </p>
-        </div>
-        <div class="col-start-7 col-span-6">
-          <h3 class="text-poppins font-[700] text-lg pb-2">Titre titre</h3>
-          <p>
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum
+        <div class="col-span-12 md:col-start-3 md:col-span-8">
+          <h1 class="text-center font-fraunces text-3xl font-[700] md:text-4xl">
+            À propos
+          </h1>
+          <p
+            class="mt-4 text-center font-poppins text-lg leading-relaxed text-zinc-700"
+          >
+            Studio Chatoyant est un studio de jeux vidéo indépendant établi au
+            Québec. Notre focus est de vous offrir de belles expériences à petit
+            prix.
           </p>
         </div>
       </section>
 
-      <section class="grid grid-cols-12 mx-auto max-w-7xl">
-        <div class="col-start-1 col-span-12">
-          <span class="flex items-center">
-            <span class="h-px flex-1 bg-gray-300"></span>
+      <!-- ================= Le studio ================= -->
+      <section
+        id="studio"
+        class="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-12 py-12"
+      >
+        <div class="col-span-12">
+          <h2 class="text-center font-fraunces text-2xl font-[700] md:text-3xl">
+            Studio Chatoyant
+          </h2>
+        </div>
 
-            <span class="shrink-0 px-4 text-gray-900">Separateur</span>
+        <div class="col-span-12 md:col-span-6">
+          <h3 class="font-fraunces text-lg font-[700]">Chatoyant</h3>
+          <p class="mt-3 font-poppins leading-relaxed text-zinc-700">
+            <span class="italic"
+              >Ce qui change de couleur selon l'angle où on le regarde.</span
+            >
+            C'est exactement ce que l'on veut faire avec nos jeux : des
+            expériences qui changent selon la personne qui y joue. Apportez vos
+            propres couleurs.
+          </p>
+        </div>
 
-            <span class="h-px flex-1 bg-gray-300"></span>
+        <div class="col-span-12 flex items-center justify-center md:col-span-6">
+          <svg
+            class="w-full max-w-sm"
+            viewBox="0 0 320 220"
+            role="img"
+            aria-labelledby="titreManette"
+          >
+            <title id="titreManette">
+              Illustration d'une manette de jeu entourée d'étoiles
+            </title>
+
+            <!-- ---- Étoiles à quatre branches ---- -->
+            <!-- Chaque étoile est le même tracé, déplacé et redimensionné.
+         Les courbes quadratiques donnent les extrémités arrondies. -->
+            <g fill="#ffcb42">
+              <path
+                transform="translate(38 38) scale(1.1)"
+                d="M0,-14 Q2.5,-2.5 14,0 Q2.5,2.5 0,14 Q-2.5,2.5 -14,0 Q-2.5,-2.5 0,-14 Z"
+              />
+              <path
+                transform="translate(288 176) scale(0.8)"
+                d="M0,-14 Q2.5,-2.5 14,0 Q2.5,2.5 0,14 Q-2.5,2.5 -14,0 Q-2.5,-2.5 0,-14 Z"
+              />
+            </g>
+
+            <g fill="#ff6ee8">
+              <path
+                transform="translate(284 42) scale(0.9)"
+                d="M0,-14 Q2.5,-2.5 14,0 Q2.5,2.5 0,14 Q-2.5,2.5 -14,0 Q-2.5,-2.5 0,-14 Z"
+              />
+              <path
+                transform="translate(160 26) scale(0.6)"
+                d="M0,-14 Q2.5,-2.5 14,0 Q2.5,2.5 0,14 Q-2.5,2.5 -14,0 Q-2.5,-2.5 0,-14 Z"
+              />
+            </g>
+
+            <g fill="#4ecdf5">
+              <path
+                transform="translate(44 182) scale(0.95)"
+                d="M0,-14 Q2.5,-2.5 14,0 Q2.5,2.5 0,14 Q-2.5,2.5 -14,0 Q-2.5,-2.5 0,-14 Z"
+              />
+            </g>
+
+            <!-- ---- Gâchettes (derrière le corps) ---- -->
+            <rect x="62" y="62" width="52" height="18" rx="9" fill="#a1a1aa" />
+            <rect x="206" y="62" width="52" height="18" rx="9" fill="#a1a1aa" />
+
+            <!-- ---- Corps : deux disques reliés par un rectangle ---- -->
+            <g fill="#e4e4e7" stroke="#3f3f46" stroke-width="5">
+              <circle cx="86" cy="122" r="44" />
+              <circle cx="234" cy="122" r="44" />
+              <rect x="86" y="78" width="148" height="88" />
+            </g>
+            <!-- Recouvre les traits de jonction laissés par les trois formes -->
+            <rect x="89" y="81" width="142" height="82" fill="#e4e4e7" />
+
+            <!-- ---- Croix directionnelle ---- -->
+            <path
+              d="M78,99 h16 v15 h15 v16 h-15 v15 h-16 v-15 h-15 v-16 h15 z"
+              fill="#3f3f46"
+              stroke="#3f3f46"
+              stroke-width="5"
+              stroke-linejoin="round"
+            />
+
+            <!-- ---- Boutons d'action ---- -->
+            <circle cx="234" cy="103" r="11" fill="#ff6ee8" />
+            <circle cx="253" cy="122" r="11" fill="#4ecdf5" />
+            <circle cx="234" cy="141" r="11" fill="#ffcb42" />
+            <circle cx="215" cy="122" r="11" fill="#f0a45c" />
+
+            <!-- ---- Boutons centraux ---- -->
+            <rect
+              x="139"
+              y="136"
+              width="30"
+              height="10"
+              rx="5"
+              fill="#a1a1aa"
+            />
+            <rect
+              x="176"
+              y="136"
+              width="30"
+              height="10"
+              rx="5"
+              fill="#a1a1aa"
+            />
+          </svg>
+        </div>
+      </section>
+
+      <!-- ================= Mission, vision, valeurs ================= -->
+      <section
+        id="missionVisionValeurs"
+        class="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-12 py-12"
+      >
+        <div class="col-span-12">
+          <!-- Composant « separator » adapté de HyperUI -->
+          <span class="flex items-center" aria-hidden="true">
+            <span class="h-px flex-1 bg-zinc-300"></span>
+            <span class="shrink-0 px-4 text-lg text-zinc-400">&#10022;</span>
+            <span class="h-px flex-1 bg-zinc-300"></span>
           </span>
-          <h2 class="text-center md:text-2xl font-fraunces font-[600]">
+        </div>
+
+        <div class="col-span-12">
+          <h2 class="text-center font-fraunces text-2xl font-[700] md:text-3xl">
             Mission, vision, valeurs
           </h2>
         </div>
-        <div class="col-start-1 col-span-4 p-4">
-          <h3 class="text-poppins font-[700] text-lg pb-2">Mission</h3>
-          <p>
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum
+
+        <div
+          class="col-span-12 md:col-span-4 p-6 rounded-xl bg-[#ff89eb] text-[#27272a]"
+        >
+          <h3 class="font-fraunces text-xl font-[700]">Mission</h3>
+          <p class="mt-3 font-poppins leading-relaxed">
+            Notre mission est de vous offrir des jeux qui vous respectent, vous,
+            votre temps et votre portefeuille. Aligné avec notre mission, nos
+            jeux n'ont pas de monétisation en dehors du prix de vente initial.
           </p>
         </div>
-        <div class="col-start-5 col-span-4 p-4">
-          <h3 class="text-poppins font-[700] text-lg pb-2">Vision</h3>
-          <p>
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum
+
+        <div
+          class="col-span-12 md:col-span-4 p-6 rounded-xl bg-[#ffd15b] text-[#27272a]"
+        >
+          <h3 class="font-fraunces text-xl font-[700]">Vision</h3>
+          <p class="mt-3 font-poppins leading-relaxed">
+            Notre vision est de vous offrir de petits jeux qui offrent de
+            grandes expériences. Des jeux qui ont du coeur. Limité en moyen,
+            nous trouvons des manières ingénieuses de vous offrir des expérience
+            de qualité.
           </p>
         </div>
-        <div class="col-start-9 col-span-4 p-4">
-          <h3 class="text-poppins font-[700] text-lg pb-2">Valeurs</h3>
-          <p>
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum
+
+        <div
+          class="col-span-12 md:col-span-4 p-6 rounded-xl bg-[#74dfff] text-[#27272a]"
+        >
+          <h3 class="font-fraunces text-xl font-[700]">Valeurs</h3>
+          <p class="mt-3 font-poppins leading-relaxed">
+            Nous nous engageons à ne pas utiliser d'intelligence artificielle
+            pour tout ce qui est art, musique, écriture, traductions de texte,
+            placeholders, moodboards ou tout autre contenu créatif dans le jeu.
           </p>
         </div>
       </section>
-      <section class="grid grid-cols-12 mx-auto max-w-7xl">
-        <div class="col-start-1 col-span-12">
-          <span class="flex items-center">
-            <span class="h-px flex-1 bg-gray-300"></span>
 
-            <span class="shrink-0 px-4 text-gray-900">Separateur</span>
-
-            <span class="h-px flex-1 bg-gray-300"></span>
+      <!-- ================= Équipe ================= -->
+      <section
+        id="equipe"
+        class="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-12 py-12"
+      >
+        <div class="col-span-12">
+          <!-- Composant « separator » adapté de HyperUI -->
+          <span class="flex items-center" aria-hidden="true">
+            <span class="h-px flex-1 bg-zinc-300"></span>
+            <span class="shrink-0 px-4 text-lg text-zinc-400">&#10022;</span>
+            <span class="h-px flex-1 bg-zinc-300"></span>
           </span>
-          <h2 class="text-center text-xl font-bold">Équipe</h2>
         </div>
 
-        <div class="col-start-1 col-span-4">
-          <img src="media/chatoi250x250.png" alt="Chatoi" />
-          <h3 class="text-lg">Chatoi</h3>
-          <p>Title</p>
-          <p>
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum
+        <div class="col-span-12">
+          <h2 class="text-center font-fraunces text-2xl font-[700] md:text-3xl">
+            Équipe
+          </h2>
+        </div>
+
+        <article
+          class="col-span-12 rounded-2xl border border-zinc-200 bg-white p-6 text-center md:col-span-4"
+        >
+          <div class="flex justify-center">
+            <svg
+              class="mx-auto h-28 w-28"
+              viewBox="0 0 100 100"
+              role="img"
+              aria-labelledby="titreChatoi"
+            >
+              <title id="titreChatoi">Illustration d'un chat orange</title>
+
+              <!-- Oreilles dessinées avant la tête pour passer dessous.
+                   Le contour de même couleur arrondit les pointes. -->
+              <polygon
+                points="19,54 25,15 49,28"
+                fill="#f0a45c"
+                stroke="#f0a45c"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
+              <polygon
+                points="81,54 75,15 51,28"
+                fill="#f0a45c"
+                stroke="#f0a45c"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
+
+              <circle cx="50" cy="57" r="35" fill="#f0a45c" />
+              <!-- Bouche « 3 » couchée -->
+              <path
+                d="M38 62 q6 8 12 1 q6 7 12 -1"
+                fill="none"
+                stroke="#ffffff"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+
+          <h3 class="mt-4 font-fraunces text-xl font-[700]">Chatoi</h3>
+          <p
+            class="mt-1 font-poppins text-sm uppercase tracking-widest text-zinc-500"
+          >
+            Direction et développement
+          </p>
+
+          <p class="mt-4 font-poppins text-sm leading-relaxed text-zinc-700">
+            S'occupe du code, du design et de la plupart des décisions. A grandi
+            à côté d'un troupeau, ce qui explique beaucoup de choses.
+          </p>
+        </article>
+
+        <article
+          class="col-span-12 rounded-2xl border border-zinc-200 bg-white p-6 text-center md:col-span-4"
+        >
+          <div class="flex justify-center">
+            <svg
+              class="mx-auto h-28 w-28"
+              viewBox="0 0 100 100"
+              role="img"
+              aria-labelledby="titreStella"
+            >
+              <title id="titreStella">Illustration d'un chat noir</title>
+
+              <!-- Oreilles dessinées avant la tête pour passer dessous.
+                   Le contour de même couleur arrondit les pointes. -->
+              <polygon
+                points="19,54 25,15 49,28"
+                fill="#2f2f33"
+                stroke="#2f2f33"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
+              <polygon
+                points="81,54 75,15 51,28"
+                fill="#2f2f33"
+                stroke="#2f2f33"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
+
+              <circle cx="50" cy="57" r="35" fill="#2f2f33" />
+              <!-- Moustaches -->
+              <g
+                stroke="#ffffff"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              >
+                <path d="M36 58 L14 52" />
+                <path d="M36 63 L12 63" />
+                <path d="M36 68 L14 74" />
+                <path d="M64 58 L86 52" />
+                <path d="M64 63 L88 63" />
+                <path d="M64 68 L86 74" />
+              </g>
+            </svg>
+          </div>
+
+          <h3 class="mt-4 font-fraunces text-xl font-[700]">Stella</h3>
+          <p
+            class="mt-1 font-poppins text-sm uppercase tracking-widest text-zinc-500"
+          >
+            Direction artistique
+          </p>
+
+          <p class="mt-4 font-poppins text-sm leading-relaxed text-zinc-700">
+            Dessine les créatures, les décors et l'interface. Considère qu'un
+            pixel mal placé est un pixel qui se voit.
+          </p>
+        </article>
+
+        <article
+          class="col-span-12 rounded-2xl border border-zinc-200 bg-white p-6 text-center md:col-span-4"
+        >
+          <div class="flex justify-center">
+            <svg
+              class="mx-auto h-28 w-28"
+              viewBox="0 0 100 100"
+              role="img"
+              aria-labelledby="titreAvenir"
+            >
+              <title id="titreAvenir">
+                Silhouette de chat avec un point d'interrogation
+              </title>
+
+              <polygon
+                points="19,54 25,15 49,28"
+                fill="#a1a1aa"
+                stroke="#a1a1aa"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
+              <polygon
+                points="81,54 75,15 51,28"
+                fill="#a1a1aa"
+                stroke="#a1a1aa"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
+
+              <circle cx="50" cy="57" r="35" fill="#a1a1aa" />
+
+              <text
+                x="50"
+                y="72"
+                text-anchor="middle"
+                font-family="Poppins, sans-serif"
+                font-size="42"
+                font-weight="700"
+                fill="#ffffff"
+              >
+                ?
+              </text>
+            </svg>
+          </div>
+
+          <h3 class="mt-4 font-fraunces text-xl font-[700]">À venir</h3>
+          <p
+            class="mt-1 font-poppins text-sm uppercase tracking-widest text-zinc-500"
+          >
+            Poste ouvert
+          </p>
+
+          <p class="mt-4 font-poppins text-sm leading-relaxed text-zinc-700">
+            Une place attend la bonne personne. On ne sait pas encore qui, ni
+            pour quoi exactement.
+          </p>
+        </article>
+      </section>
+
+      <!-- ================= Ami·es du studio ================= -->
+      <section
+        id="amiesDuStudio"
+        class="mx-auto grid max-w-7xl grid-cols-12 gap-8 px-12 py-12"
+      >
+        <div class="col-span-12">
+          <!-- Composant « separator » adapté de HyperUI -->
+          <span class="flex items-center" aria-hidden="true">
+            <span class="h-px flex-1 bg-zinc-300"></span>
+            <span class="shrink-0 px-4 text-lg text-zinc-400">&#10022;</span>
+            <span class="h-px flex-1 bg-zinc-300"></span>
+          </span>
+        </div>
+
+        <div class="col-span-12 md:col-start-3 md:col-span-8">
+          <h2 class="text-center font-fraunces text-2xl font-[700] md:text-3xl">
+            Ami·es du studio
+          </h2>
+          <p
+            class="mt-4 text-center font-poppins leading-relaxed text-zinc-700"
+          >
+            Les personnes qui ne font pas partie de l'équipe, mais sans qui rien
+            ne serait pareil.
           </p>
         </div>
-        <div class="col-start-5 col-span-4">
-          <img src="media/stella250x250.png" alt="Stella" />
-          <h3 class="text-lg">Stella</h3>
-          <p>Title</p>
-          <p>
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum
+
+        <article
+          class="col-span-12 rounded-2xl border border-zinc-200 bg-white p-6 text-center md:col-span-4"
+        >
+          <div class="flex justify-center">
+            <svg
+              class="mx-auto h-28 w-28"
+              viewBox="0 0 100 100"
+              role="img"
+              aria-labelledby="titreAmi1"
+            >
+              <title id="titreAmi1">Illustration d'un chat rose</title>
+
+              <!-- Oreilles dessinées avant la tête pour passer dessous.
+                   Le contour de même couleur arrondit les pointes. -->
+
+              <polygon
+                points="19,54 25,15 49,28"
+                fill="#ff6ee8"
+                stroke="#ff6ee8"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
+              <polygon
+                points="81,54 75,15 51,28"
+                fill="#ff6ee8"
+                stroke="#ff6ee8"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
+
+              <circle cx="50" cy="57" r="35" fill="#ff6ee8" />
+              <!-- Intérieur des oreilles -->
+              <polygon
+                points="26,42 29,24 41,30"
+                fill="#ffd9f7"
+                stroke="#ffd9f7"
+                stroke-width="4"
+                stroke-linejoin="round"
+              />
+              <polygon
+                points="74,42 71,24 59,30"
+                fill="#ffd9f7"
+                stroke="#ffd9f7"
+                stroke-width="4"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+
+          <h3 class="mt-4 font-fraunces text-xl font-[700]">Nom à remplacer</h3>
+          <p
+            class="mt-1 font-poppins text-sm uppercase tracking-widest text-zinc-500"
+          >
+            Musique
           </p>
-        </div>
-        <div class="col-start-9 col-span-4">
-          <img src="media/teammember250x250.png" alt="À venir" />
-          <h3 class="text-lg">À venir</h3>
-          <p>Title</p>
-          <p>
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum
+
+          <p class="mt-4 font-poppins text-sm leading-relaxed text-zinc-700">
+            Description à remplacer.
           </p>
-        </div>
+        </article>
+
+        <article
+          class="col-span-12 rounded-2xl border border-zinc-200 bg-white p-6 text-center md:col-span-4"
+        >
+          <div class="flex justify-center">
+            <svg
+              class="mx-auto h-28 w-28"
+              viewBox="0 0 100 100"
+              role="img"
+              aria-labelledby="titreAmi2"
+            >
+              <title id="titreAmi2">Illustration d'un chat bleu</title>
+
+              <!-- Oreilles dessinées avant la tête pour passer dessous.
+                   Le contour de même couleur arrondit les pointes. -->
+              <polygon
+                points="19,54 25,15 49,28"
+                fill="#4ecdf5"
+                stroke="#4ecdf5"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
+              <polygon
+                points="81,54 75,15 51,28"
+                fill="#4ecdf5"
+                stroke="#4ecdf5"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
+
+              <circle cx="50" cy="57" r="35" fill="#4ecdf5" />
+              <!-- Yeux -->
+              <ellipse cx="38" cy="53" rx="6" ry="8" fill="#ffffff" />
+              <ellipse cx="62" cy="53" rx="6" ry="8" fill="#ffffff" />
+            </svg>
+          </div>
+
+          <h3 class="mt-4 font-fraunces text-xl font-[700]">Nom à remplacer</h3>
+          <p
+            class="mt-1 font-poppins text-sm uppercase tracking-widest text-zinc-500"
+          >
+            Traduction
+          </p>
+
+          <p class="mt-4 font-poppins text-sm leading-relaxed text-zinc-700">
+            Description à remplacer.
+          </p>
+        </article>
+
+        <article
+          class="col-span-12 rounded-2xl border border-zinc-200 bg-white p-6 text-center md:col-span-4"
+        >
+          <div class="flex justify-center">
+            <svg
+              class="mx-auto h-28 w-28"
+              viewBox="0 0 100 100"
+              role="img"
+              aria-labelledby="titreAvenir"
+            >
+              <title id="titreAvenir">
+                Silhouette de chat avec un point d'interrogation
+              </title>
+
+              <polygon
+                points="19,54 25,15 49,28"
+                fill="#a1a1aa"
+                stroke="#a1a1aa"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
+              <polygon
+                points="81,54 75,15 51,28"
+                fill="#a1a1aa"
+                stroke="#a1a1aa"
+                stroke-width="7"
+                stroke-linejoin="round"
+              />
+
+              <circle cx="50" cy="57" r="35" fill="#a1a1aa" />
+
+              <text
+                x="50"
+                y="72"
+                text-anchor="middle"
+                font-family="Poppins, sans-serif"
+                font-size="42"
+                font-weight="700"
+                fill="#ffffff"
+              >
+                ?
+              </text>
+            </svg>
+          </div>
+
+          <h3 class="mt-4 font-fraunces text-xl font-[700]">À venir</h3>
+          <p
+            class="mt-1 font-poppins text-sm uppercase tracking-widest text-zinc-500"
+          >
+            Poste ouvert
+          </p>
+
+          <p class="mt-4 font-poppins text-sm leading-relaxed text-zinc-700">
+            Une place attend la bonne personne. On ne sait pas encore qui, ni
+            pour quoi exactement.
+          </p>
+        </article>
       </section>
     </main>
 
