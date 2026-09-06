@@ -77,13 +77,42 @@
 }
 
 /* ==================================================================
+   Étoiles flottantes de la page « À propos »
+   ================================================================== */
+
+.etoile {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: etoile-flottement 7s ease-in-out infinite;
+}
+
+/* Les délais négatifs démarrent les cycles à des moments différents :
+   les étoiles ne montent pas toutes ensemble. */
+.etoile--b {
+  animation-duration: 9s;
+  animation-delay: -2s;
+}
+
+.etoile--c {
+  animation-duration: 5.5s;
+  animation-delay: -1s;
+}
+
+@keyframes etoile-flottement {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ==================================================================
    Accessibilité — mouvement réduit
-   À FUSIONNER avec ton bloc prefers-reduced-motion existant.
-   Le décor reste affiché, simplement immobile.
    ================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
   .hero__forme {
+    animation: none;
+  }
+  .etoile {
     animation: none;
   }
 }

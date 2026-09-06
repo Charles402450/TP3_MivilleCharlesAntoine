@@ -301,9 +301,40 @@ fieldset.formulaire__champ--erreur {
 }
 
 /* ==================================================================
-   Formulaire — mise en page temporaire
-   À remplacer par les utilitaires Tailwind à l'étape suivante.
+   Formulaire
    ================================================================== */
+
+.formulaire__note {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.formulaire__bouton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+
+  background-color: #27272a;
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.formulaire__bouton:focus-visible {
+  outline: 2px solid #27272a;
+  outline-offset: 2px;
+}
 
 .formulaire__champ {
   margin-bottom: 1.25rem;
@@ -479,14 +510,16 @@ fieldset.formulaire__champ--erreur {
   transform: translateX(-0.35rem);
 }
 
-.bouton--chatoyant {
+.bouton--chatoyant,
+.formulaire__bouton {
   position: relative;
   /* Crée un contexte d'empilement : le pseudo-élément en z-index -1
      reste au-dessus du fond du bouton, mais sous son texte. */
   isolation: isolate;
 }
 
-.bouton--chatoyant::before {
+.bouton--chatoyant::before,
+.formulaire__bouton::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -508,7 +541,9 @@ fieldset.formulaire__champ--erreur {
 }
 
 .bouton--chatoyant:hover::before,
-.bouton--chatoyant:focus-visible::before {
+.bouton--chatoyant:focus-visible::before,
+.formulaire__bouton:hover::before,
+.formulaire__bouton:focus-visible::before {
   opacity: 1;
   animation: chatoiement 3s ease-in-out infinite alternate;
 }

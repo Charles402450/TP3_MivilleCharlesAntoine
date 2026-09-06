@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="favicon.png" />
+    <link rel="stylesheet" href="css/hero.css" />
     <link href="css/hover.css" rel="stylesheet" media="all" />
     <link href="css/hover.css" rel="stylesheet" media="all" />
     <script src="js/navigation.js" defer></script>
@@ -51,7 +52,7 @@
                 height="36"
                 class="h-9 w-9"
               />
-              <span class="font-fugaz text-lg tracking-wide"
+              <span class="font-fraunces font-[700] text-lg tracking-wide"
                 >Studio Chatoyant</span
               >
             </a>
@@ -119,7 +120,7 @@
                 <li class="nav__item">
                   <a
                     href="apropos.html"
-                    class="nav__lien block rounded-md px-3 py-2 font-inter transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
+                    class="nav__lien block rounded-md px-3 py-2 font-poppins transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
                   >
                     À propos
                   </a>
@@ -130,7 +131,7 @@
                     <!-- Le lien occupe toute la largeur restante sur mobile -->
                     <a
                       href="jeux.html"
-                      class="nav__lien flex-1 rounded-l-md px-3 py-2 font-inter transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:block md:rounded-md"
+                      class="nav__lien flex-1 rounded-l-md px-3 py-2 font-poppins transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:block md:rounded-md"
                     >
                       Jeux
                     </a>
@@ -168,7 +169,7 @@
                     <li>
                       <a
                         href="moogicalsanctuary.html"
-                        class="nav__lien nav__lien--sousMenu block rounded-md px-3 py-2 font-inter text-sm transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:rounded-none"
+                        class="nav__lien nav__lien--sousMenu block rounded-md px-3 py-2 font-poppins text-sm transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold md:rounded-none"
                       >
                         Moogical Sanctuary
                       </a>
@@ -180,7 +181,7 @@
                 <li class="nav__item">
                   <a
                     href="contact.html"
-                    class="nav__lien block rounded-md px-3 py-2 font-inter transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
+                    class="nav__lien block rounded-md px-3 py-2 font-poppins transition-colors hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:bg-zinc-800 aria-[current=page]:font-semibold"
                   >
                     Contact
                   </a>
@@ -273,7 +274,7 @@
           </h2>
         </div>
 
-        <div class="col-span-12 md:col-span-6">
+        <div class="col-span-12 md:col-span-6 flex flex-col justify-center">
           <h3 class="font-fraunces text-lg font-[700]">Chatoyant</h3>
           <p class="mt-3 font-poppins leading-relaxed text-zinc-700">
             <span class="italic"
@@ -296,57 +297,81 @@
               Illustration d'une manette de jeu entourée d'étoiles
             </title>
 
-            <!-- ---- Étoiles à quatre branches ---- -->
-            <!-- Chaque étoile est le même tracé, déplacé et redimensionné.
-         Les courbes quadratiques donnent les extrémités arrondies. -->
-            <g fill="#ffcb42">
+            <!-- ---- Étoiles à quatre branches ----
+         Le <g> porte la position ; la classe anime l'enfant. Sans cette
+         séparation, l'animation CSS écraserait le transform de placement. -->
+            <g transform="translate(38 38) scale(1.1)">
               <path
-                transform="translate(38 38) scale(1.1)"
+                class="etoile"
                 d="M0,-14 Q2.5,-2.5 14,0 Q2.5,2.5 0,14 Q-2.5,2.5 -14,0 Q-2.5,-2.5 0,-14 Z"
-              />
-              <path
-                transform="translate(288 176) scale(0.8)"
-                d="M0,-14 Q2.5,-2.5 14,0 Q2.5,2.5 0,14 Q-2.5,2.5 -14,0 Q-2.5,-2.5 0,-14 Z"
-              />
-            </g>
-
-            <g fill="#ff6ee8">
-              <path
-                transform="translate(284 42) scale(0.9)"
-                d="M0,-14 Q2.5,-2.5 14,0 Q2.5,2.5 0,14 Q-2.5,2.5 -14,0 Q-2.5,-2.5 0,-14 Z"
-              />
-              <path
-                transform="translate(160 26) scale(0.6)"
-                d="M0,-14 Q2.5,-2.5 14,0 Q2.5,2.5 0,14 Q-2.5,2.5 -14,0 Q-2.5,-2.5 0,-14 Z"
+                fill="#ffcb42"
+                stroke="#ffcb42"
+                stroke-width="4"
+                stroke-linejoin="round"
               />
             </g>
 
-            <g fill="#4ecdf5">
+            <g transform="translate(284 42) scale(0.9)">
               <path
-                transform="translate(44 182) scale(0.95)"
+                class="etoile etoile--b"
                 d="M0,-14 Q2.5,-2.5 14,0 Q2.5,2.5 0,14 Q-2.5,2.5 -14,0 Q-2.5,-2.5 0,-14 Z"
+                fill="#ff6ee8"
+                stroke="#ff6ee8"
+                stroke-width="4"
+                stroke-linejoin="round"
               />
             </g>
 
-            <!-- ---- Gâchettes (derrière le corps) ---- -->
-            <rect x="62" y="62" width="52" height="18" rx="9" fill="#a1a1aa" />
-            <rect x="206" y="62" width="52" height="18" rx="9" fill="#a1a1aa" />
+            <g transform="translate(160 26) scale(0.6)">
+              <path
+                class="etoile etoile--c"
+                d="M0,-14 Q2.5,-2.5 14,0 Q2.5,2.5 0,14 Q-2.5,2.5 -14,0 Q-2.5,-2.5 0,-14 Z"
+                fill="#ff6ee8"
+                stroke="#ff6ee8"
+                stroke-width="4"
+                stroke-linejoin="round"
+              />
+            </g>
+
+            <g transform="translate(44 182) scale(0.95)">
+              <path
+                class="etoile etoile--b"
+                d="M0,-14 Q2.5,-2.5 14,0 Q2.5,2.5 0,14 Q-2.5,2.5 -14,0 Q-2.5,-2.5 0,-14 Z"
+                fill="#4ecdf5"
+                stroke="#4ecdf5"
+                stroke-width="4"
+                stroke-linejoin="round"
+              />
+            </g>
+
+            <g transform="translate(288 176) scale(0.8)">
+              <path
+                class="etoile etoile--c"
+                d="M0,-14 Q2.5,-2.5 14,0 Q2.5,2.5 0,14 Q-2.5,2.5 -14,0 Q-2.5,-2.5 0,-14 Z"
+                fill="#ffcb42"
+                stroke="#ffcb42"
+                stroke-width="4"
+                stroke-linejoin="round"
+              />
+            </g>
+
+            <!-- ---- Gâchettes ---- -->
+            <rect x="62" y="70" width="52" height="18" rx="9" fill="#a1a1aa" />
+            <rect x="206" y="70" width="52" height="18" rx="9" fill="#a1a1aa" />
 
             <!-- ---- Corps : deux disques reliés par un rectangle ---- -->
-            <g fill="#e4e4e7" stroke="#3f3f46" stroke-width="5">
+            <g fill="#e4e4e7">
               <circle cx="86" cy="122" r="44" />
               <circle cx="234" cy="122" r="44" />
               <rect x="86" y="78" width="148" height="88" />
             </g>
-            <!-- Recouvre les traits de jonction laissés par les trois formes -->
-            <rect x="89" y="81" width="142" height="82" fill="#e4e4e7" />
 
             <!-- ---- Croix directionnelle ---- -->
             <path
               d="M78,99 h16 v15 h15 v16 h-15 v15 h-16 v-15 h-15 v-16 h15 z"
               fill="#3f3f46"
               stroke="#3f3f46"
-              stroke-width="5"
+              stroke-width="3"
               stroke-linejoin="round"
             />
 
@@ -357,17 +382,19 @@
             <circle cx="215" cy="122" r="11" fill="#f0a45c" />
 
             <!-- ---- Boutons centraux ---- -->
+            <!-- Centre du corps : x = 160, y = 122. Deux boutons de 30 avec 10 de
+         gap font 70 de large, donc de 125 à 195. -->
             <rect
-              x="139"
-              y="136"
+              x="125"
+              y="132"
               width="30"
               height="10"
               rx="5"
               fill="#a1a1aa"
             />
             <rect
-              x="176"
-              y="136"
+              x="165"
+              y="132"
               width="30"
               height="10"
               rx="5"
@@ -495,15 +522,9 @@
           </div>
 
           <h3 class="mt-4 font-fraunces text-xl font-[700]">Chatoi</h3>
-          <p
-            class="mt-1 font-poppins text-sm uppercase tracking-widest text-zinc-500"
-          >
-            Direction et développement
-          </p>
 
           <p class="mt-4 font-poppins text-sm leading-relaxed text-zinc-700">
-            S'occupe du code, du design et de la plupart des décisions. A grandi
-            à côté d'un troupeau, ce qui explique beaucoup de choses.
+            Développeur, designer, artiste.
           </p>
         </article>
 
@@ -555,15 +576,9 @@
           </div>
 
           <h3 class="mt-4 font-fraunces text-xl font-[700]">Stella</h3>
-          <p
-            class="mt-1 font-poppins text-sm uppercase tracking-widest text-zinc-500"
-          >
-            Direction artistique
-          </p>
 
           <p class="mt-4 font-poppins text-sm leading-relaxed text-zinc-700">
-            Dessine les créatures, les décors et l'interface. Considère qu'un
-            pixel mal placé est un pixel qui se voit.
+            Alimentation et gestion des médias sociaux.
           </p>
         </article>
 
@@ -613,15 +628,10 @@
           </div>
 
           <h3 class="mt-4 font-fraunces text-xl font-[700]">À venir</h3>
-          <p
-            class="mt-1 font-poppins text-sm uppercase tracking-widest text-zinc-500"
-          >
-            Poste ouvert
-          </p>
 
           <p class="mt-4 font-poppins text-sm leading-relaxed text-zinc-700">
-            Une place attend la bonne personne. On ne sait pas encore qui, ni
-            pour quoi exactement.
+            Intéressé·e?
+            <a class="font-bold" href="contact.html">Contactez-nous!</a>
           </p>
         </article>
       </section>
@@ -644,12 +654,6 @@
           <h2 class="text-center font-fraunces text-2xl font-[700] md:text-3xl">
             Ami·es du studio
           </h2>
-          <p
-            class="mt-4 text-center font-poppins leading-relaxed text-zinc-700"
-          >
-            Les personnes qui ne font pas partie de l'équipe, mais sans qui rien
-            ne serait pareil.
-          </p>
         </div>
 
         <article
@@ -701,15 +705,10 @@
             </svg>
           </div>
 
-          <h3 class="mt-4 font-fraunces text-xl font-[700]">Nom à remplacer</h3>
-          <p
-            class="mt-1 font-poppins text-sm uppercase tracking-widest text-zinc-500"
-          >
-            Musique
-          </p>
+          <h3 class="mt-4 font-fraunces text-xl font-[700]">Misty</h3>
 
           <p class="mt-4 font-poppins text-sm leading-relaxed text-zinc-700">
-            Description à remplacer.
+            Testeur.
           </p>
         </article>
 
@@ -749,15 +748,10 @@
             </svg>
           </div>
 
-          <h3 class="mt-4 font-fraunces text-xl font-[700]">Nom à remplacer</h3>
-          <p
-            class="mt-1 font-poppins text-sm uppercase tracking-widest text-zinc-500"
-          >
-            Traduction
-          </p>
+          <h3 class="mt-4 font-fraunces text-xl font-[700]">Parry</h3>
 
           <p class="mt-4 font-poppins text-sm leading-relaxed text-zinc-700">
-            Description à remplacer.
+            Traducteur.
           </p>
         </article>
 
@@ -807,15 +801,10 @@
           </div>
 
           <h3 class="mt-4 font-fraunces text-xl font-[700]">À venir</h3>
-          <p
-            class="mt-1 font-poppins text-sm uppercase tracking-widest text-zinc-500"
-          >
-            Poste ouvert
-          </p>
 
           <p class="mt-4 font-poppins text-sm leading-relaxed text-zinc-700">
-            Une place attend la bonne personne. On ne sait pas encore qui, ni
-            pour quoi exactement.
+            Intéressé·e?
+            <a class="font-bold" href="contact.html">Contactez-nous!</a>
           </p>
         </article>
       </section>
