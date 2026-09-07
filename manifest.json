@@ -1,0 +1,42 @@
+{
+  "name": "Studio Chatoyant",
+  "short_name": "Chatoyant",
+  "description": "Studio de jeux vidéo indépendant établi au Québec. Découvrez Moogical Sanctuary, un jeu cozy où l'on prend soin d'un sanctuaire de vaches.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fdf8f0",
+  "theme_color": "#27272a",
+  "lang": "fr-CA",
+  "dir": "ltr",
+  "categories": ["entertainment", "games"],
+  "icons": [
+    {
+      "src": "icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "media/capture-ecran.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Page d'accueil de Studio Chatoyant"
+    }
+  ]
+}
