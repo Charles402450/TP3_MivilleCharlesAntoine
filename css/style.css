@@ -386,6 +386,11 @@ fieldset.formulaire__champ--erreur {
     transition: none;
   }
 
+  /* Cartes de la section « game jams » : on fige le léger soulèvement. */
+  .jams__carte {
+    transition: none;
+  }
+
   /* Le dégradé reste visible, mais figé. */
   .titre-chatoyant {
     animation: none;
