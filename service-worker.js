@@ -5,7 +5,7 @@
    sinon les anciennes versions continuent d'être servies.
    ================================================================== */
 
-const CACHE_NAME = "chatoyant-v1";
+const CACHE_NAME = "chatoyant-v2";
 
 // Le CDN Tailwind est traité à part : s'il est indisponible au moment de
 // l'installation, addAll() rejetterait tout le précache et le service
