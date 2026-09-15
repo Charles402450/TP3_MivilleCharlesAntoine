@@ -32,10 +32,19 @@
   ],
   "screenshots": [
     {
-      "src": "media/capture-ecran.png",
+      "src": "media/capture-ecran-1280x720.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
+      "label": "Page d'accueil de Studio Chatoyant"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "media/capture-ecran-720x1000.png",
+      "sizes": "720x1000",
+      "type": "image/png",
+      "form_factor": "narrow",
       "label": "Page d'accueil de Studio Chatoyant"
     }
   ]
