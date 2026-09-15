@@ -37,9 +37,7 @@
       "type": "image/png",
       "form_factor": "wide",
       "label": "Page d'accueil de Studio Chatoyant"
-    }
-  ],
-  "screenshots": [
+    },
     {
       "src": "media/capture-ecran-720x1000.png",
       "sizes": "720x1000",
